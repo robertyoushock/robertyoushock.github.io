@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Places · Robert Youshock</title>
+<meta name="description" content="A phone-first web app for two people to keep a top 10 in every food category, plus a wish list of places to try. It has a map with category pins, offline mode, drag to re-rank, and">
+<link rel="canonical" href="https://www.robertyoushock.com/portfolio/our-places/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Our Places · Robert Youshock">
+<meta property="og:description" content="A phone-first web app for two people to keep a top 10 in every food category, plus a wish list of places to try. It has a map with category pins, offline mode, drag to re-rank, and">
+<meta property="og:url" content="https://www.robertyoushock.com/portfolio/our-places/">
+<meta property="og:image" content="https://www.robertyoushock.com/assets/side/our-places.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E0FBFC">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar"><a class="home" href="/">Robert Youshock<img class="bolt" src="/assets/bolt.png" alt="" width="448" height="640"></a><a class="back" href="/#work"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> All work</a></header>
+<main id="main" class="proj">
+  <p class="eyebrow rise">Side project · Web app</p>
+  <h1 class="rise d1">Our Places</h1>
+  <p class="lede rise d2">A phone-first web app for two people to keep a top 10 in every food category, plus a wish list of places to try. It has a map with category pins, offline mode, drag to re-rank, and Spotify Wrapped-style story cards drawn on the phone. It runs for $0 a month.</p>
+  <dl class="facts rise d3">
+    <div><dt>Year</dt><dd>2026</dd></div>
+    <div><dt>Service</dt><dd>Product design, front-end, back-end</dd></div>
+    <div><dt>Client</dt><dd>Personal</dd></div>
+    <div><dt>Built in</dt><dd>Vanilla JS, Cloudflare Pages + D1, MapLibre</dd></div>
+  </dl>
+  <div class="player"><img src="/assets/side/our-places.webp" alt="The Our Places app on three phones" width="1600" height="889"></div>
+  <div class="ps">
+    <div class="t-coral"><h2>Problem</h2><p>Two people, dozens of favorite spots, and the same question every weekend: where should we eat? Notes apps and map lists don't rank anything, don't sync cleanly between two phones, and don't remember what to order.</p></div>
+    <div class="t-deep"><h2>Solution</h2><p>I designed and built a home-screen app where every category gets a ranked top 10 and a wish list, synced between both phones and usable with no signal. Design came first: two visually distinct lists, a food-icon map, and a warm type-driven look. The whole stack runs on free tiers with daily caps, so it can never send a bill.</p></div>
+  </div>
+  <div class="gallery"><img class="wide" src="/assets/side/our-places-lists.webp" alt="" loading="lazy" width="1600" height="850"><img class="wide" src="/assets/side/our-places-map.webp" alt="" loading="lazy" width="1600" height="850"><img class="wide" src="/assets/side/our-places-stories.webp" alt="" loading="lazy" width="1600" height="850"></div>
+  <p class="btns" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px"><a class="pill dark" href="https://eats.robertyoushock.com/?demo" rel="noopener">Try the demo</a><a class="pill" href="https://github.com/robertyoushock/our-places-showcase" rel="noopener">Project page on GitHub</a></p>
+  <nav class="next" aria-label="More work">
+    <a href="/portfolio/airbag-recall/"><small>← Previous</small><b>Airbag Recall</b></a>
+    <a href="/portfolio/tegna-elections-24/"><small>Next →</small><b>TEGNA Election 2024</b></a>
+  </nav>
+</main>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div>
+    <h2 id="contact-title">Ready to shape stories through design?</h2>
+    <p>I build visuals and tools that turn complex ideas into clear, compelling experiences. Let's talk about what you're making.</p>
+  </div>
+  <div class="actions">
+    <a class="pill dark" href="mailto:robertyoushock@gmail.com">robertyoushock@gmail.com</a>
+    <a class="pill" href="https://www.linkedin.com/in/robert-youshock-1ba979108/" rel="noopener">LinkedIn</a>
+    <a class="pill" href="https://drive.google.com/file/d/1pe5GCmHrd4w9osHMgBbQyYB7ftix2-LO/view" rel="noopener">Resume</a>
+  </div>
+</section>
+<footer class="foot"><span>© 2026 Robert Youshock · Denver, CO</span><span>Hand-built, hosted free on GitHub Pages</span></footer>
+<script>
+document.querySelectorAll('.player[data-video] button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var p = b.parentNode, f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + p.dataset.video + '?autoplay=1&rel=0';
+    f.title = b.getAttribute('aria-label'); f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+    p.innerHTML = ''; p.appendChild(f);
+  });
+});
+</script>
+</body>
+</html>
