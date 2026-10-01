@@ -3,6 +3,8 @@
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, readdirSync } from 'node:fs';
 const ROOT = new URL('../', import.meta.url).pathname;
 const S = JSON.parse(readFileSync(ROOT + '_src/site.json', 'utf8'));
+import { createHash } from 'node:crypto';
+const CSSV = createHash('md5').update(readFileSync(new URL('../', import.meta.url).pathname + '_src/site.css')).digest('hex').slice(0, 8);
 const SITE = 'https://www.robertyoushock.com';
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const imgs = (slug) => readdirSync(ROOT + `assets/work/${slug}`).filter((f) => f.endsWith('.webp')).map((f) => f.replace('.webp', '')).filter((n) => n !== 'cover').sort((a, b) => a - b);
@@ -31,7 +33,7 @@ const page = ({ title, desc, path, image = '/assets/og.png', body }) => `<!docty
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=${CSSV}">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
