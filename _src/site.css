@@ -138,7 +138,9 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; }
 .side-card .kicker { margin: 0; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #FDD697; font-weight: 600; }
 .side-card p { margin: 0; opacity: 0.88; }
 .side-card .go { margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; }
-.side-card .go span { background: #FDD697; color: #110301; padding: 10px 16px; font-size: 16px; }
+.side-card h3 a { text-decoration: none; }
+.side-card .go a { background: #FDD697; color: #110301; padding: 10px 16px; font-size: 16px; text-decoration: none; transition: transform 160ms ease, background 160ms ease; }
+.side-card .go a:hover { transform: translateY(-2px); background: #FFE7B8; }
 @media (max-width: 760px) { .side-card { grid-template-columns: 1fr; } }
 
 /* ---------- contact + footer ---------- */

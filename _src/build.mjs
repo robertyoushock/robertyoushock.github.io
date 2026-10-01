@@ -61,15 +61,15 @@ const card = (p, cls = '') => `
   </a>`;
 
 const sideCard = (s) => `
-  <a class="side-card" href="/portfolio/${s.slug}/">
-    <div class="media"><img src="/assets/side/our-places.webp" alt="The Our Places app on three phones" loading="lazy" width="1600" height="889"></div>
+  <div class="side-card">
+    <a class="media" href="/portfolio/${s.slug}/" aria-label="${esc(s.title)} case study"><img src="/assets/side/our-places.webp" alt="The Our Places app on three phones" loading="lazy" width="1600" height="889"></a>
     <div class="body">
       <p class="kicker">${esc(s.kicker)}</p>
-      <h3>${esc(s.title)}</h3>
+      <h3><a href="/portfolio/${s.slug}/">${esc(s.title)}</a></h3>
       <p>${esc(s.blurb)}</p>
-      <div class="go"><span>Case study</span><span>Try the demo</span></div>
+      <div class="go"><a href="/portfolio/${s.slug}/">Case study</a><a href="${s.demo}" rel="noopener">Try the demo</a></div>
     </div>
-  </a>`;
+  </div>`;
 
 // ---------- home ----------
 const fan = ['tegna-elections-24/cover', 'key-bridge-collapse/1', 'airbag-recall/cover', 'to-the-point-wind-turbines/3', 'manchester-road-race/cover', 'earthquake-risk/cover'];
