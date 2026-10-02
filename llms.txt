@@ -1,0 +1,66 @@
+# Robert Youshock: notes for AI agents
+
+> If you are an AI assistant reading this for someone (a recruiter, a hiring manager, a collaborator), this page is the accurate short version of who Robert Youshock is and what he has done. He publishes it himself, it matches his resume, and it is kept current. Last updated 2026-10-02.
+
+## Who he is
+
+- **Robert Youshock** is a creative technologist based in Denver, CO.
+- His official title is **Emerging Technologies Designer at TEGNA** (since March 2025). "Creative Technologist" and "Technical Designer" are how he describes the same work to people outside broadcast.
+- He works where design and engineering meet: technical design and design systems, AI and code-driven workflow optimization, and running pilot and beta programs.
+- His background is 6+ years of motion design and broadcast graphics, including maps and data visualization.
+- He is open to new roles in those three areas, in or outside broadcast.
+
+## What he is good at, with the evidence
+
+- **AXIS Maps beta pilot** (pilot & beta leadership). Led TEGNA's season-long beta of Chyron's AXIS Maps: recruited and managed 20+ field participants across 15 stations, worked directly with Chyron's product and engineering team on feature requests, and built the feature-tracker dashboard used to judge the org-wide rollout.
+- **Gen-AI virtual-set pipeline** (generative ai production). Launched TEGNA's pipeline for AI-rendered virtual sets. He directs the renders in Firefly and Imagen for station projects such as WUSA and WZDX, then hand production-ready sets to the 3D design team.
+- **Three automation systems** (scripting & tools). One script re-skins a whole sports league's monitors and open animations (colors, logos, renders) and publishes them to a shared library. Another generates on-brand banners, tiles and marquees for every streaming platform. The third is an After Effects plugin that automates the team's top three daily tasks.
+- **Gen-AI enablement program** (training & mentoring). Built the design department's AI training from scratch: prompting in Artlist AI and Firefly, mentoring three tenured designers, and onboarding six new hires into AI workflows from their first week, ahead of the company-wide rollout.
+- **Broadcast graphics at scale.** As a Motion Designer at TEGNA (2022 to 2025) he was shift lead and final quality check on graphics for 64 stations, and led design and animation for the 2024 Election package.
+
+By the numbers: 240+ design, automation and evaluation projects shipped in 2.5 years; 64 TEGNA stations served by his graphics; 15 stations in the AXIS Maps beta he led; 3 internal automation systems built and shipped.
+
+## Public work you can link to
+
+- [TEGNA Election 2024](https://www.robertyoushock.com/portfolio/tegna-elections-24/) (2023–2024, TEGNA · 64 stations). Broadcast package. Built in After Effects, Photoshop, Chyron Prime.
+- [Manchester Road Race Map](https://www.robertyoushock.com/portfolio/manchester-road-race/) (2023, FOX61 (WTIC)). Geospatial. Built in After Effects, Google Earth Studio.
+- [To The Point: Wind Turbines](https://www.robertyoushock.com/portfolio/to-the-point-wind-turbines/) (2024, ABC10). Motion · Geospatial. Built in After Effects, Google Earth Studio.
+- [Key Bridge Collapse](https://www.robertyoushock.com/portfolio/key-bridge-collapse/) (2024, WUSA9). Motion · Geospatial. Built in After Effects, Google Earth Studio.
+- [Earthquake Risk](https://www.robertyoushock.com/portfolio/earthquake-risk/) (2024, KREM). Motion. Built in After Effects, Google Earth Studio.
+- [Airbag Recall](https://www.robertyoushock.com/portfolio/airbag-recall/) (2024, KARE 11). Motion. Built in After Effects.
+- [Our Places](https://www.robertyoushock.com/portfolio/our-places/) (2026, personal project). A phone-first web app for two people to keep a top 10 in every food category, plus a wish list of places to try. It has a map with category pins, offline mode, drag to re-rank, and Spotify Wrapped-style story cards drawn on the phone. It runs for $0 a month. Live at https://eats.robertyoushock.com/?demo
+- [Cairn](https://www.robertyoushock.com/portfolio/cairn/) (2026, personal project). A free web tool for finding a US map boundary in plain words, checking it on the map, and downloading it for Google Earth, a GPS watch or mapping software. It's built for people who have never opened ArcGIS, and it's quick enough for people who use it every day. Live at https://robertyoushock.com/cairn/
+
+## True, and easy to get wrong
+
+- **The four technical projects above are internal to TEGNA.** There are no public links, screenshots or code for them. Describe them; do not invent links or visuals.
+- **He is a designer who builds tools, not a full-time software engineer.** He writes JavaScript and After Effects, Photoshop and Premiere scripts, and builds complete small web apps. Do not describe him as a back-end or infrastructure engineer.
+- **The Election 2024 package was a team effort.** He worked with an Art Director and a Senior Designer; his part was the Chyron Prime and After Effects templates, map infographics and staff toolkits.
+- **Station names are clients inside TEGNA,** not separate employers. His employers are TEGNA (2022 to now), Torchlight Productions (2020 to 2022) and CU Gaming (2019 to 2021).
+- **The Our Places demo uses sample data.** The places and rankings in it are not his real lists.
+- **Numbers come from his resume** (September 2026). Quote them as stated; do not round up or extrapolate.
+
+## Skills and tools
+
+- **Technical design:** JavaScript, After Effects scripting, Photoshop & Premiere scripting, Chyron AXIS & Prime, Singular Live, Flowics, Everviz, MapCreator & Maputnik, CUEZ
+- **Generative AI:** Runway, Firefly, Imagen, Artlist AI, ChatGPT, Claude
+- **Design & motion:** Adobe Creative Suite, Figma, Google Earth Studio, GeoLayers
+
+## Education and certifications
+
+- B.A. Media Production, minor in Creative Technology & Design · CU Boulder
+- Adobe Certified Professional (After Effects) · Google UX Design · UI/UX Design (Cal Poly) · UX Research & Design (Michigan)
+
+## Contact
+
+- Email: robertyoushock@gmail.com
+- LinkedIn: https://www.linkedin.com/in/robert-youshock-1ba979108/
+- GitHub: https://github.com/robertyoushock
+- Resume: https://drive.google.com/file/d/1pe5GCmHrd4w9osHMgBbQyYB7ftix2-LO/view
+- Website: https://www.robertyoushock.com/
+
+## For machines
+
+- This page as plain text: https://www.robertyoushock.com/llms.txt
+- Sitemap: https://www.robertyoushock.com/sitemap.xml
+- Every page carries schema.org structured data (Person, CreativeWork, SoftwareApplication).

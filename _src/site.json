@@ -12,20 +12,96 @@
   "intro": "I turn production problems into shipped technical solutions: automation systems, a Gen-AI virtual-set pipeline, and a 15-station beta pilot run with a vendor's product team. My roots are in broadcast motion design and maps, so everything I build has to look good and hold up on deadline.",
   "available": "I'm open to roles in technical design and design systems, AI and code-driven workflow optimization, and pilot or beta program leadership, anywhere the same build-test-scale approach can work beyond broadcast.",
   "stack": {
-    "Technical design": ["JavaScript", "After Effects scripting", "Photoshop & Premiere scripting", "Chyron AXIS & Prime", "Singular Live", "Flowics", "Everviz", "MapCreator & Maputnik", "CUEZ"],
-    "Generative AI": ["Runway", "Firefly", "Imagen", "Artlist AI", "ChatGPT", "Claude"],
-    "Design & motion": ["Adobe Creative Suite", "Figma", "Google Earth Studio", "GeoLayers"]
+    "Technical design": [
+      "JavaScript",
+      "After Effects scripting",
+      "Photoshop & Premiere scripting",
+      "Chyron AXIS & Prime",
+      "Singular Live",
+      "Flowics",
+      "Everviz",
+      "MapCreator & Maputnik",
+      "CUEZ"
+    ],
+    "Generative AI": [
+      "Runway",
+      "Firefly",
+      "Imagen",
+      "Artlist AI",
+      "ChatGPT",
+      "Claude"
+    ],
+    "Design & motion": [
+      "Adobe Creative Suite",
+      "Figma",
+      "Google Earth Studio",
+      "GeoLayers"
+    ]
   },
-  "skills": [["Motion design", 6], ["Computational data visualization", 3], ["Technical design & automation", 3], ["UI/UX design", 2], ["Generative AI production", 2]],
+  "skills": [
+    [
+      "Motion design",
+      6
+    ],
+    [
+      "Computational data visualization",
+      3
+    ],
+    [
+      "Technical design & automation",
+      3
+    ],
+    [
+      "UI/UX design",
+      2
+    ],
+    [
+      "Generative AI production",
+      2
+    ]
+  ],
   "experience": [
-    ["TEGNA", "Emerging Technologies Designer", "2025 – now"],
-    ["TEGNA", "Motion Designer", "2022 – 2025"],
-    ["Torchlight Productions", "Graphic Designer", "2020 – 2022"],
-    ["CU Gaming", "Graphic Design Lead", "2019 – 2021"]
+    [
+      "TEGNA",
+      "Emerging Technologies Designer",
+      "2025 – now"
+    ],
+    [
+      "TEGNA",
+      "Motion Designer",
+      "2022 – 2025"
+    ],
+    [
+      "Torchlight Productions",
+      "Graphic Designer",
+      "2020 – 2022"
+    ],
+    [
+      "CU Gaming",
+      "Graphic Design Lead",
+      "2019 – 2021"
+    ]
   ],
   "education": "B.A. Media Production, minor in Creative Technology & Design · CU Boulder",
   "certs": "Adobe Certified Professional (After Effects) · Google UX Design · UI/UX Design (Cal Poly) · UX Research & Design (Michigan)",
-  "numbers": [["240+", "design, automation and evaluation projects shipped in 2.5 years"], ["64", "TEGNA stations served by my graphics"], ["15", "stations in the AXIS Maps beta I led"], ["3", "internal automation systems built and shipped"]],
+  "numbers": [
+    [
+      "240+",
+      "design, automation and evaluation projects shipped in 2.5 years"
+    ],
+    [
+      "64",
+      "TEGNA stations served by my graphics"
+    ],
+    [
+      "15",
+      "stations in the AXIS Maps beta I led"
+    ],
+    [
+      "3",
+      "internal automation systems built and shipped"
+    ]
+  ],
   "tech": [
     {
       "title": "AXIS Maps beta pilot",
@@ -52,68 +128,159 @@
       "link": null
     }
   ],
-  "side": {
-    "slug": "our-places",
-    "title": "Our Places",
-    "kicker": "Side project · Web app",
-    "blurb": "A phone-first web app for two people to keep a top 10 in every food category, plus a wish list of places to try. It has a map with category pins, offline mode, drag to re-rank, and Spotify Wrapped-style story cards drawn on the phone. It runs for $0 a month.",
-    "demo": "https://eats.robertyoushock.com/?demo",
-    "repo": "https://github.com/robertyoushock/our-places-showcase",
-    "year": "2026",
-    "service": "Product design, front-end, back-end",
-    "client": "Personal",
-    "built": "Vanilla JS, Cloudflare Pages + D1, MapLibre",
-    "problem": "Two people, dozens of favorite spots, and the same question every weekend: where should we eat? Notes apps and map lists don't rank anything, don't sync cleanly between two phones, and don't remember what to order.",
-    "solution": "I designed and built a home-screen app where every category gets a ranked top 10 and a wish list, synced between both phones and usable with no signal. Design came first: two visually distinct lists, a food-icon map, and a warm type-driven look. The whole stack runs on free tiers with daily caps, so it can never send a bill."
-  },
   "projects": [
     {
-      "slug": "tegna-elections-24", "title": "TEGNA Election 2024", "kicker": "Broadcast package",
-      "video": "wjRo3gY78-k", "link": "https://youtu.be/wjRo3gY78-k",
+      "slug": "tegna-elections-24",
+      "title": "TEGNA Election 2024",
+      "kicker": "Broadcast package",
+      "video": "wjRo3gY78-k",
+      "link": "https://youtu.be/wjRo3gY78-k",
       "blurb": "From September 2023 through Election Day, I worked with our Art Director and a Senior Designer to build the look and feel of TEGNA's 2024 Elections Package. I built the Chyron Prime templates, the After Effects templates behind the live-updating electoral map, and toolkits for station staff, and I was the bridge between the Motion Design and CG teams. It's my most end-to-end project to date.",
-      "year": "2023–2024", "service": "Motion graphics", "client": "TEGNA · 64 stations", "built": "After Effects, Photoshop, Chyron Prime",
+      "year": "2023–2024",
+      "service": "Motion graphics",
+      "client": "TEGNA · 64 stations",
+      "built": "After Effects, Photoshop, Chyron Prime",
       "problem": "Election coverage needs one visual system that can handle fast-moving data, live map updates and station-level customization without losing clarity or consistency.",
       "solution": "We developed the package from concept through Election Day. I built the Chyron Prime templates powering the live electoral map, designed map-driven infographics, and created toolkits so every station had a responsive, cohesive package ready for a high-stakes night."
     },
     {
-      "slug": "manchester-road-race", "title": "Manchester Road Race Map", "kicker": "Geospatial",
-      "video": "qKVe38p5Ks0", "link": "https://youtu.be/qKVe38p5Ks0",
+      "slug": "manchester-road-race",
+      "title": "Manchester Road Race Map",
+      "kicker": "Geospatial",
+      "video": "qKVe38p5Ks0",
+      "link": "https://youtu.be/qKVe38p5Ks0",
       "blurb": "Run the course before the runners do. This animated map of the Thanksgiving Day Manchester Road Race, built in Google Earth Studio and After Effects, brought the event to life on WTIC's broadcast with dynamic movement and cinematic clarity.",
-      "year": "2023", "service": "Geospatial design", "client": "FOX61 (WTIC)", "built": "After Effects, Google Earth Studio",
+      "year": "2023",
+      "service": "Geospatial design",
+      "client": "FOX61 (WTIC)",
+      "built": "After Effects, Google Earth Studio",
       "problem": "Static maps miss the excitement and detail of a live race, and leave viewers without a real sense of the course.",
       "solution": "I independently built a fully animated course map that pairs accuracy with engaging motion: a broadcast-ready graphic that anchored WTIC's full-day coverage and kept viewers connected to the race."
     },
     {
-      "slug": "to-the-point-wind-turbines", "title": "To The Point: Wind Turbines", "kicker": "Motion · Geospatial",
-      "video": "AJYw9e5qZW4", "link": "https://youtu.be/AJYw9e5qZW4",
+      "slug": "to-the-point-wind-turbines",
+      "title": "To The Point: Wind Turbines",
+      "kicker": "Motion · Geospatial",
+      "video": "AJYw9e5qZW4",
+      "link": "https://youtu.be/AJYw9e5qZW4",
       "blurb": "A geospatial explainer on California's offshore wind future. Vector infographics and animated maps unpack the promise and the challenges of floating wind turbines off Humboldt County's coast, making a complex climate story clear.",
-      "year": "2024", "service": "Motion infographic, geospatial design", "client": "ABC10", "built": "After Effects, Google Earth Studio",
+      "year": "2024",
+      "service": "Motion infographic, geospatial design",
+      "client": "ABC10",
+      "built": "After Effects, Google Earth Studio",
       "problem": "Offshore wind is a data-heavy story full of policy, environmental and community concerns. Traditional reporting struggles to show the scale of the turbines, the economics of port upgrades, or the environmental impact.",
       "solution": "I designed and animated a package that combines geospatial maps with vector infographics, turning legislation, costs and environmental concerns into a visual story ABC10 viewers could follow."
     },
     {
-      "slug": "key-bridge-collapse", "title": "Key Bridge Collapse", "kicker": "Motion · Geospatial",
-      "video": "a0QoLkOaGHo", "link": "https://youtu.be/a0QoLkOaGHo",
+      "slug": "key-bridge-collapse",
+      "title": "Key Bridge Collapse",
+      "kicker": "Motion · Geospatial",
+      "video": "a0QoLkOaGHo",
+      "link": "https://youtu.be/a0QoLkOaGHo",
       "blurb": "A broadcast-ready explainer of Baltimore's Key Bridge collapse. With Google Earth Studio and custom vector infographics, the package traced the collision, showed the scale of the disaster, and put its impact in context for WUSA9's coverage.",
-      "year": "2024", "service": "Motion infographics, geospatial design", "client": "WUSA9", "built": "After Effects, Google Earth Studio",
+      "year": "2024",
+      "service": "Motion infographics, geospatial design",
+      "client": "WUSA9",
+      "built": "After Effects, Google Earth Studio",
       "problem": "The collapse was a fast-moving story involving engineering, shipping logistics, lawsuits and rebuilding plans. Footage and static maps couldn't show the scale, or explain why it happened and what came next.",
       "solution": "I designed and animated a visual explainer that combines geospatial mapping with infographic storytelling, turning technical details into clear visuals about the tragedy and what it means for Baltimore and national infrastructure."
     },
     {
-      "slug": "earthquake-risk", "title": "Earthquake Risk", "kicker": "Motion",
-      "video": null, "link": "https://www.krem.com/article/tech/science/environment/environment-northwest/earthquake-risk-northwest/293-b6cc829c-20a1-4c6c-a66f-705ea955053b",
+      "slug": "earthquake-risk",
+      "title": "Earthquake Risk",
+      "kicker": "Motion",
+      "video": null,
+      "link": "https://www.krem.com/article/tech/science/environment/environment-northwest/earthquake-risk-northwest/293-b6cc829c-20a1-4c6c-a66f-705ea955053b",
       "blurb": "For KREM's deep dive into Northwest earthquake risk, I built a suite of graphics, including a Google Earth Studio map and vector explainers, that made tectonic science engaging and easy to follow.",
-      "year": "2024", "service": "Motion infographics, geospatial design", "client": "KREM", "built": "After Effects, Google Earth Studio",
+      "year": "2024",
+      "service": "Motion infographics, geospatial design",
+      "client": "KREM",
+      "built": "After Effects, Google Earth Studio",
       "problem": "Subduction zones, fault lines and volcanic activity feel abstract and overwhelming to most viewers, and charts or static images rarely capture the scale, urgency or geography.",
       "solution": "I created a package that pairs Google Earth Studio mapping with custom vector diagrams of tectonic plates, earthquake terms and seismic hazards, bringing scientific depth to KREM's coverage while keeping it easy to understand."
     },
     {
-      "slug": "airbag-recall", "title": "Airbag Recall", "kicker": "Motion",
-      "video": "hC9CDjVt45A", "link": "https://youtu.be/hC9CDjVt45A",
+      "slug": "airbag-recall",
+      "title": "Airbag Recall",
+      "kicker": "Motion",
+      "video": "hC9CDjVt45A",
+      "link": "https://youtu.be/hC9CDjVt45A",
       "blurb": "A broadcast breakdown of why more than 457,000 Ford and Mazda vehicles were under urgent \"Do Not Drive\" orders over faulty Takata airbag inflators, combining geospatial visuals, motion-driven data layers and infographic storytelling.",
-      "year": "2024", "service": "Motion infographic", "client": "KARE 11", "built": "After Effects",
+      "year": "2024",
+      "service": "Motion infographic",
+      "client": "KARE 11",
+      "built": "After Effects",
       "problem": "It's the largest auto safety recall in U.S. history, yet millions of dangerous inflators remain unrepaired. The challenge was communicating that urgency clearly.",
       "solution": "I built a visual package that layers animated geospatial overlays with infographics broken down by make, model and urgency, showing the scope, the human toll (27 deaths, 400+ injuries) and the free fix, with a clear call to check your VIN."
+    }
+  ],
+  "sides": [
+    {
+      "slug": "our-places",
+      "title": "Our Places",
+      "kicker": "Side project · Web app",
+      "blurb": "A phone-first web app for two people to keep a top 10 in every food category, plus a wish list of places to try. It has a map with category pins, offline mode, drag to re-rank, and Spotify Wrapped-style story cards drawn on the phone. It runs for $0 a month.",
+      "demo": "https://eats.robertyoushock.com/?demo",
+      "repo": "https://github.com/robertyoushock/our-places-showcase",
+      "year": "2026",
+      "service": "Product design, front-end, back-end",
+      "client": "Personal",
+      "built": "Vanilla JS, Cloudflare Pages + D1, MapLibre",
+      "problem": "Two people, dozens of favorite spots, and the same question every weekend: where should we eat? Notes apps and map lists don't rank anything, don't sync cleanly between two phones, and don't remember what to order.",
+      "solution": "I designed and built a home-screen app where every category gets a ranked top 10 and a wish list, synced between both phones and usable with no signal. Design came first: two visually distinct lists, a food-icon map, and a warm type-driven look. The whole stack runs on free tiers with daily caps, so it can never send a bill.",
+      "demoLabel": "Try the demo",
+      "repoLabel": "Project page on GitHub",
+      "hero": "our-places",
+      "heroAlt": "The Our Places app on three phones",
+      "heroW": 1600,
+      "heroH": 889,
+      "gallery": [
+        "our-places-lists",
+        "our-places-map",
+        "our-places-stories"
+      ],
+      "card": {
+        "bg": "#2C1810",
+        "fg": "#F6F3EA",
+        "accent": "#FDD697",
+        "accentInk": "#110301",
+        "media": "#FDD697",
+        "pos": "78% center"
+      }
+    },
+    {
+      "slug": "cairn",
+      "title": "Cairn",
+      "kicker": "Side project · Web tool",
+      "blurb": "A free web tool for finding a US map boundary in plain words, checking it on the map, and downloading it for Google Earth, a GPS watch or mapping software. It's built for people who have never opened ArcGIS, and it's quick enough for people who use it every day.",
+      "demo": "https://robertyoushock.com/cairn/",
+      "demoLabel": "Open Cairn",
+      "repo": "https://github.com/robertyoushock/Cairn",
+      "repoLabel": "Code on GitHub",
+      "year": "2026",
+      "service": "Product design, front-end",
+      "client": "Personal",
+      "built": "Vanilla JS, MapLibre, Census and ArcGIS data",
+      "problem": "Public map data is easy to find and hard to trust. A normal search returns ten results with the same name: some are empty, some are tables with no shapes, and some label every shape with an ID number. Getting one clean boundary file usually means knowing GIS software.",
+      "solution": "Cairn understands plain words like \"texas state house\", opens and checks every result before showing it, and ranks the nearest first. It exports KML, KMZ, GPX or GeoJSON and shows the file size before you download. There's no account and no server: the browser talks straight to the data publishers, so it costs nothing to run.",
+      "hero": "cairn",
+      "heroAlt": "Cairn: a search panel on the left and a map of Colorado school districts on the right",
+      "heroW": 1600,
+      "heroH": 889,
+      "gallery": [
+        "cairn-search",
+        "cairn-pick",
+        "cairn-route",
+        "cairn-fires"
+      ],
+      "card": {
+        "bg": "#0A4349",
+        "fg": "#F8F9F7",
+        "accent": "#FFC933",
+        "accentInk": "#10222B",
+        "media": "#E6ECEE",
+        "pos": "left center"
+      }
     }
   ]
 }

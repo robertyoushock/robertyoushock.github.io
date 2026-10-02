@@ -135,12 +135,12 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; }
 .side-card .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% center; }
 .side-card .body { padding: 30px; display: flex; flex-direction: column; gap: 12px; }
 .side-card h3 { margin: 0; font-size: 36px; line-height: 1; }
-.side-card .kicker { margin: 0; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #FDD697; font-weight: 600; }
+.side-card .kicker { margin: 0; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
 .side-card p { margin: 0; opacity: 0.88; }
 .side-card .go { margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; }
 .side-card h3 a { text-decoration: none; }
-.side-card .go a { background: #FDD697; color: #110301; padding: 10px 16px; font-size: 16px; text-decoration: none; transition: transform 160ms ease, background 160ms ease; }
-.side-card .go a:hover { transform: translateY(-2px); background: #FFE7B8; }
+.side-card .go a { background: var(--accent); color: var(--accent-ink); padding: 10px 16px; font-size: 16px; text-decoration: none; transition: transform 160ms ease, background 160ms ease; }
+.side-card .go a:hover { transform: translateY(-2px); filter: brightness(1.08); }
 @media (max-width: 760px) { .side-card { grid-template-columns: 1fr; } }
 
 /* ---------- contact + footer ---------- */
@@ -195,3 +195,17 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; }
 .d1 { animation-delay: 70ms; } .d2 { animation-delay: 140ms; } .d3 { animation-delay: 210ms; } .d4 { animation-delay: 280ms; }
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { *, *::before { animation: none !important; transition: none !important; } }
+
+.sides { display: grid; gap: 20px; }
+.gallery img.free { aspect-ratio: auto; height: auto; object-fit: contain; background: transparent; }
+
+/* ---------- /agents document ---------- */
+.doc { max-width: 820px; }
+.doc h1 { font-size: clamp(38px, 6vw, 64px); }
+.doc h2 { font-size: 28px; margin: 40px 0 12px; padding-top: 18px; border-top: 1px solid var(--line); }
+.doc p, .doc li { font-size: 18px; line-height: 1.55; }
+.doc ul { padding-left: 22px; margin: 0 0 14px; }
+.doc li { margin: 0 0 8px; }
+.doc .note { background: var(--card); border-left: 4px solid var(--coral); padding: 16px 18px; margin: 0 0 8px; }
+.doc a { text-underline-offset: 3px; word-break: break-word; }
+.foot a { color: inherit; text-underline-offset: 3px; }
