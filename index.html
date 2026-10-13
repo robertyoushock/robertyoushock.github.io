@@ -452,39 +452,85 @@ footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height
   background: var(--ink);
   color: var(--cream);
 }
-/* Sticky nav (only when scrolled down over the main content) */
-.stuck .nav,
-[data-theme="light"].stuck .nav,
-[data-theme="light"] .stuck .nav {
-  background: rgba(250, 247, 244, 0.92);
-  border-color: rgba(24, 22, 21, 0.15);
-  color: #181615;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+/* ═══════════════════════════════════════════════════════════
+   NAVIGATION: FLOATING (OVER HERO) VS STUCK (OVER CONTENT)
+   ═══════════════════════════════════════════════════════════ */
+
+/* A. FLOATING NAV: When at top over the hero gradient (NOT stuck) */
+html:not(.stuck) .nav,
+html[data-theme="light"]:not(.stuck) .nav {
+  background: rgba(255, 255, 255, 0.13) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 30px rgba(120, 30, 10, 0.12) !important;
 }
-[data-theme="light"].stuck .nav a,
-[data-theme="light"] .stuck .nav a {
-  color: #181615;
+
+html:not(.stuck) .nav a,
+html[data-theme="light"]:not(.stuck) .nav a {
+  color: #FFFFFF !important;
 }
-[data-theme="light"].stuck .nav a.on,
-[data-theme="light"] .stuck .nav a.on {
-  background: rgba(24, 22, 21, 0.08);
+
+html:not(.stuck) .nav a.on,
+html[data-theme="light"]:not(.stuck) .nav a.on {
+  background: rgba(255, 255, 255, 0.16) !important;
+  color: #FFFFFF !important;
 }
-[data-theme="light"].stuck .nav .hl,
-[data-theme="light"] .stuck .nav .hl {
-  background: rgba(24, 22, 21, 0.08);
+
+html:not(.stuck) .nav .hl,
+html[data-theme="light"]:not(.stuck) .nav .hl {
+  background: rgba(255, 255, 255, 0.16) !important;
 }
-[data-theme="light"].stuck .nav i,
-[data-theme="light"] .stuck .nav i {
-  background: rgba(24, 22, 21, 0.15);
+
+html:not(.stuck) .nav i,
+html[data-theme="light"]:not(.stuck) .nav i {
+  background: rgba(255, 255, 255, 0.3) !important;
 }
-[data-theme="light"].stuck .theme-toggle,
-[data-theme="light"] .stuck .theme-toggle {
-  color: #181615;
-  background: rgba(24, 22, 21, 0.06);
+
+html:not(.stuck) .theme-toggle,
+html[data-theme="light"]:not(.stuck) .theme-toggle {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.14) !important;
 }
-[data-theme="light"].stuck .theme-toggle:hover,
-[data-theme="light"] .stuck .theme-toggle:hover {
-  background: rgba(24, 22, 21, 0.12);
+
+html:not(.stuck) .theme-toggle:hover,
+html[data-theme="light"]:not(.stuck) .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+}
+
+/* B. STUCK NAV: When scrolled down over content in LIGHT MODE */
+html[data-theme="light"].stuck .nav {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid rgba(24, 22, 21, 0.14) !important;
+  color: #181615 !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="light"].stuck .nav a {
+  color: #181615 !important;
+}
+
+html[data-theme="light"].stuck .nav a.on {
+  background: rgba(24, 22, 21, 0.08) !important;
+  color: #181615 !important;
+}
+
+html[data-theme="light"].stuck .nav .hl {
+  background: rgba(24, 22, 21, 0.08) !important;
+}
+
+html[data-theme="light"].stuck .nav i {
+  background: rgba(24, 22, 21, 0.15) !important;
+}
+
+html[data-theme="light"].stuck .theme-toggle {
+  color: #181615 !important;
+  background: rgba(24, 22, 21, 0.06) !important;
+}
+
+html[data-theme="light"].stuck .theme-toggle:hover {
+  background: rgba(24, 22, 21, 0.12) !important;
+  color: #181615 !important;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -523,55 +569,6 @@ footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height
 .hero .hero-foot s,
 [data-theme="light"] .hero .hero-foot s {
   background: rgba(255, 255, 255, 0.6) !important;
-}
-
-/* 2. Floating nav resting over the hero gradient (when NOT stuck) */
-:not(.stuck) .nav,
-[data-theme="light"]:not(.stuck) .nav,
-[data-theme="light"] :not(.stuck) .nav {
-  background: rgba(255, 255, 255, 0.13) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 10px 30px rgba(120, 30, 10, 0.12) !important;
-}
-
-:not(.stuck) .nav a,
-[data-theme="light"]:not(.stuck) .nav a,
-[data-theme="light"] :not(.stuck) .nav a {
-  color: #FFFFFF !important;
-}
-
-:not(.stuck) .nav a.on,
-[data-theme="light"]:not(.stuck) .nav a.on,
-[data-theme="light"] :not(.stuck) .nav a.on {
-  background: rgba(255, 255, 255, 0.16) !important;
-  color: #FFFFFF !important;
-}
-
-:not(.stuck) .nav .hl,
-[data-theme="light"]:not(.stuck) .nav .hl,
-[data-theme="light"] :not(.stuck) .nav .hl {
-  background: rgba(255, 255, 255, 0.16) !important;
-}
-
-:not(.stuck) .nav i,
-[data-theme="light"]:not(.stuck) .nav i,
-[data-theme="light"] :not(.stuck) .nav i {
-  background: rgba(255, 255, 255, 0.3) !important;
-}
-
-:not(.stuck) .theme-toggle,
-[data-theme="light"]:not(.stuck) .theme-toggle,
-[data-theme="light"] :not(.stuck) .theme-toggle {
-  color: #FFFFFF !important;
-  background: rgba(255, 255, 255, 0.14) !important;
-}
-
-:not(.stuck) .theme-toggle:hover,
-[data-theme="light"]:not(.stuck) .theme-toggle:hover,
-[data-theme="light"] :not(.stuck) .theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.25) !important;
-  color: #FFFFFF !important;
 }
 
 /* 3. Hot stat card on gradient */
@@ -704,13 +701,66 @@ footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height
   border: 1px solid var(--line);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
-[data-theme="light"] .box {
+/* All standard boxes become white cards in light mode */
+[data-theme="light"] .box:not(.now) {
   background: #FFFFFF;
   border: 1px solid var(--line);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
+[data-theme="light"] .box:not(.now) h4 {
+  color: #181615;
+}
+[data-theme="light"] .box:not(.now) .lbl {
+  color: rgba(24, 22, 21, 0.62);
+}
+[data-theme="light"] .xps .box:not(.now) strong {
+  color: #181615;
+}
+[data-theme="light"] .xps .box:not(.now) span {
+  color: rgba(24, 22, 21, 0.62);
+}
 [data-theme="light"] .xps .box:not(.now) em {
-  color: rgba(24, 22, 21, 0.7);
+  color: rgba(24, 22, 21, 0.74);
+}
+[data-theme="light"] .chips span {
+  border-color: rgba(24, 22, 21, 0.16);
+  color: #181615;
+}
+[data-theme="light"] .edu {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  color: #181615;
+}
+[data-theme="light"] .edu small {
+  color: rgba(24, 22, 21, 0.62);
+}
+
+/* CURRENT ROLE (.box.now): ALWAYS maintains the vibrant gradient card + pure white text */
+.xps .box.now,
+.xps .now,
+[data-theme="light"] .xps .box.now,
+[data-theme="light"] .xps .now {
+  background: var(--grad) !important;
+  color: #FFFFFF !important;
+  border: 0 !important;
+  box-shadow: 0 10px 30px rgba(232, 72, 28, 0.25) !important;
+}
+.xps .box.now strong,
+.xps .now strong,
+[data-theme="light"] .xps .box.now strong,
+[data-theme="light"] .xps .now strong {
+  color: #FFFFFF !important;
+}
+.xps .box.now span,
+.xps .box.now em,
+.xps .now span,
+.xps .now em,
+[data-theme="light"] .xps .box.now span,
+[data-theme="light"] .xps .box.now em,
+[data-theme="light"] .xps .now span,
+[data-theme="light"] .xps .now em {
+  color: rgba(255, 255, 255, 0.92) !important;
 }
 [data-theme="light"] .pill:not(.cta .pill) {
   border-color: rgba(24, 22, 21, 0.35);
