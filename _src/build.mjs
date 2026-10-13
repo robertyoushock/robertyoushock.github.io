@@ -28,15 +28,15 @@ const page = ({ title, desc, path, image = '/assets/og.png', body, ld }) => `<!d
 <meta property="og:url" content="${SITE}${path}">
 <meta property="og:image" content="${SITE}${image}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#E0FBFC">
+<meta name="theme-color" content="#1F1D1D">
 <meta name="author" content="${S.name}">
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="Plain-text summary for AI assistants">
 <link rel="me" href="${S.linkedin}">
 <link rel="me" href="${S.github}">${ld ? `\n<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
-<link rel="icon" href="/assets/favicon.png">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=Hanken+Grotesk:ital,wght@1,300&family=Manrope:wght@400;500&family=Outfit:wght@500&display=swap">
 <link rel="stylesheet" href="/assets/site.css?v=${CSSV}">
 </head>
 <body>
@@ -49,16 +49,16 @@ ${body}
 const contact = `
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div>
-    <h2 id="contact-title">Ready to shape stories through design?</h2>
+    <h2 id="contact-title">ready to shape <em>stories</em> through design?</h2>
     <p>I build visuals and tools that turn complex ideas into clear, compelling experiences. Let's talk about what you're making.</p>
   </div>
   <div class="actions">
-    <a class="pill dark" href="mailto:${S.email}">${S.email}</a>
-    <a class="pill" href="${S.linkedin}" rel="noopener">LinkedIn</a>
-    <a class="pill" href="${S.resume}" rel="noopener">Resume</a>
+    <a class="pill fill" href="mailto:${S.email}">${S.email}</a>
+    <a class="pill" href="${S.linkedin}" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="pill" href="${S.resume}" target="_blank" rel="noopener">Resume</a>
   </div>
 </section>
-<footer class="foot"><span>© ${new Date().getFullYear()} ${S.name} · ${S.location}</span><span><a href="/agents/">For agents</a> · Hand-built, hosted free on GitHub Pages</span></footer>`;
+<footer class="foot"><span>© ${new Date().getFullYear()} ${S.name} · ${S.location}</span><span><a href="/agents/">For agents</a> · Hand-built, hosted on GitHub Pages</span></footer>`;
 
 const card = (p, cls = '') => `
   <a class="card ${cls}" href="/portfolio/${p.slug}/">
@@ -247,8 +247,8 @@ const projPage = (p, i) => {
       ? `<div class="player" data-video="${p.video}"><img src="/assets/work/${p.slug}/cover.webp" alt="" width="1600" height="900"><button type="button" aria-label="Play the ${esc(p.title)} video"><span class="play">${PLAY}</span>Watch the piece</button></div>`
       : `<div class="player"><img src="/assets/work/${p.slug}/cover.webp" alt="" width="1600" height="900"></div>`;
   const links = isSide
-    ? `<a class="pill dark" href="${p.demo}" rel="noopener">${esc(p.demoLabel)}</a><a class="pill" href="${p.repo}" rel="noopener">${esc(p.repoLabel)}</a>`
-    : `<a class="pill dark outlink" href="${p.link}" rel="noopener">${p.video ? 'Watch on YouTube' : 'See the story'} ${ARROW.replace('<svg', '<svg width="18" height="18"')}</a>`;
+    ? `<a class="pill fill" href="${p.demo}" target="_blank" rel="noopener">${esc(p.demoLabel)}</a><a class="pill" href="${p.repo}" target="_blank" rel="noopener">${esc(p.repoLabel)}</a>`
+    : `<a class="pill fill outlink" href="${p.link}" target="_blank" rel="noopener">${p.video ? 'Watch on YouTube' : 'See the story'} ${ARROW.replace('<svg', '<svg width="14" height="14"')}</a>`;
   return page({
     title: `${p.title} · ${S.name}`,
     desc: p.blurb.slice(0, 180),
@@ -256,7 +256,7 @@ const projPage = (p, i) => {
     ld: { '@context': 'https://schema.org', '@type': isSide ? 'SoftwareApplication' : 'CreativeWork', name: p.title, description: p.blurb, url: `${SITE}/portfolio/${p.slug}/`, ...(isSide ? { applicationCategory: 'WebApplication', operatingSystem: 'Any', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } } : { dateCreated: String(p.year).slice(0, 4), sourceOrganization: { '@type': 'Organization', name: 'TEGNA' } }), creator: { '@type': 'Person', name: S.name, url: SITE + '/' } },
     image: isSide ? `/assets/side/${p.hero}.webp` : `/assets/work/${p.slug}/cover.webp`,
     body: `
-<header class="topbar"><a class="home" href="/">${S.name}${BOLT}</a><a class="back" href="/#work">${BACK} All work</a></header>
+<div class="topbar-wrap"><header class="topbar"><a class="home" href="/">${S.name}</a><a class="pill sm back" href="/#projects">${BACK} all projects</a></header></div>
 <main id="main" class="proj">
   <p class="eyebrow rise">${esc(p.kicker)}</p>
   <h1 class="rise d1">${esc(p.title)}</h1>
@@ -269,11 +269,11 @@ const projPage = (p, i) => {
   </dl>
   ${hero}
   <div class="ps">
-    <div class="t-coral"><h2>Problem</h2><p>${esc(p.problem)}</p></div>
-    <div class="t-deep"><h2>Solution</h2><p>${esc(p.solution)}</p></div>
+    <div class="t-coral"><h2>problem</h2><p>${esc(p.problem)}</p></div>
+    <div class="t-deep"><h2>solution</h2><p>${esc(p.solution)}</p></div>
   </div>
   <div class="gallery">${gallery}</div>
-  <p class="btns" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px">${links}</p>
+  <p class="btns">${links}</p>
   <nav class="next" aria-label="More work">
     <a href="/portfolio/${prev.slug}/"><small>← Previous</small><b>${esc(prev.title)}</b></a>
     <a href="/portfolio/${next.slug}/"><small>Next →</small><b>${esc(next.title)}</b></a>
@@ -295,17 +295,30 @@ document.querySelectorAll('.player[data-video] button').forEach(function (b) {
 
 // ---------- write ----------
 const write = (path, html) => { mkdirSync(ROOT + path, { recursive: true }); writeFileSync(ROOT + path + 'index.html', html); };
-write('', home);
+// Root homepage is the gradient design in index.html; keep untouched.
 all.forEach((p, i) => write(`portfolio/${p.slug}/`, projPage(p, i)));
-// /portfolio itself just shows the work section.
-write('portfolio/', `<!doctype html><meta charset="utf-8"><title>Portfolio · ${S.name}</title><meta http-equiv="refresh" content="0; url=/#work"><link rel="canonical" href="${SITE}/#work"><a href="/#work">Portfolio</a>`);
-writeFileSync(ROOT + '404.html', page({ title: `Not found · ${S.name}`, desc: 'Page not found.', path: '/404', body: `<main id="main" class="proj" style="min-height:70vh"><p class="eyebrow" style="margin-top:60px">404</p><h1>That page moved.</h1><p class="lede">The site was rebuilt in 2026. Everything's still here.</p><p><a class="pill dark" href="/">Go home</a></p></main>` }));
+// /portfolio itself just redirects to the projects section.
+write('portfolio/', `<!doctype html><meta charset="utf-8"><title>Portfolio · ${S.name}</title><meta http-equiv="refresh" content="0; url=/#projects"><link rel="canonical" href="${SITE}/#projects"><a href="/#projects">Portfolio</a>`);
+writeFileSync(ROOT + '404.html', page({
+  title: `Not found · ${S.name}`,
+  desc: 'Page not found.',
+  path: '/404',
+  body: `
+<div class="topbar-wrap"><header class="topbar"><a class="home" href="/">${S.name}</a><a class="pill sm back" href="/">${BACK} home</a></header></div>
+<main id="main" class="proj" style="min-height:60vh">
+  <p class="eyebrow" style="margin-top:60px">404</p>
+  <h1>that page moved.</h1>
+  <p class="lede">The site was rebuilt in 2026. Everything's still here.</p>
+  <p><a class="pill fill" href="/">go home</a></p>
+</main>
+${contact}`
+}));
 write('agents/', page({
   title: `For agents · ${S.name}`,
   desc: `An accurate, plain summary of ${S.name} for AI assistants: who he is, what he has built, and what is easy to get wrong.`,
   path: '/agents/', ld: PERSON,
   body: `
-<header class="topbar"><a class="home" href="/">${S.name}${BOLT}</a><a class="back" href="/">${BACK} Home</a></header>
+<div class="topbar-wrap"><header class="topbar"><a class="home" href="/">${S.name}</a><a class="pill sm back" href="/">${BACK} home</a></header></div>
 <main id="main" class="proj doc">
   <p class="eyebrow">For agents</p>
   ${md(AGENTS_MD)}

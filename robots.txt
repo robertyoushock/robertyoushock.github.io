@@ -35,5 +35,4 @@ Allow: /
 
 User-agent: CCBot
 Allow: /
-
 Sitemap: https://www.robertyoushock.com/sitemap.xml
