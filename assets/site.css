@@ -94,6 +94,19 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .topbar .home:hover { opacity: 0.8; }
 
+/* ───────── view transition bloom ───────── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-new(root) {
+  z-index: 2;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+
 /* ───────── theme toggle ───────── */
 .theme-toggle {
   position: relative;
@@ -116,16 +129,20 @@ img { display: block; max-width: 100%; height: auto; }
   background: rgba(255, 255, 255, 0.25);
   transform: scale(1.08);
 }
+.theme-toggle:active {
+  transform: scale(0.92);
+}
 .theme-toggle svg {
   width: 17px;
   height: 17px;
   flex: none;
-  transition: transform .4s var(--eo);
+  transition: transform .5s var(--eo);
 }
 .theme-toggle .icon-sun { display: none; }
 .theme-toggle .icon-moon { display: block; }
 [data-theme="light"] .theme-toggle .icon-sun { display: block; }
 [data-theme="light"] .theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle svg { transform: rotate(360deg); }
 
 /* ───────── pills ───────── */
 .pill {

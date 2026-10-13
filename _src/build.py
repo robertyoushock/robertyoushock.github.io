@@ -95,11 +95,45 @@ def page(title, desc, path, body, ld=None, image='/assets/og.png'):
     if (m) m.setAttribute('content', t === 'light' ? '#FAF7F4' : '#1F1D1D');
     if (save) {{ try {{ localStorage.setItem('theme-preference', t); }} catch(e){{}} }}
   }}
+  var themeBusy = false;
   if (btn) {{
     btn.addEventListener('click', function() {{
       var cur = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
       var next = cur === 'light' ? 'dark' : 'light';
-      setTheme(next, true);
+      var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (RM || !document.startViewTransition) {{
+        setTheme(next, true);
+        return;
+      }}
+      if (themeBusy) return;
+      var r = btn.getBoundingClientRect(),
+          x = r.left + r.width / 2,
+          y = r.top + r.height / 2;
+      var R = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y)) + 2;
+      themeBusy = true;
+      var vt, vtEnd = function() {{ themeBusy = false; }};
+      try {{
+        vt = document.startViewTransition(function() {{
+          setTheme(next, true);
+        }});
+      }} catch(e) {{
+        vtEnd();
+        setTheme(next, true);
+        return;
+      }}
+      vt.ready.then(function() {{
+        root.animate({{
+          clipPath: [
+            'circle(0px at ' + x + 'px ' + y + 'px)',
+            'circle(' + R + 'px at ' + x + 'px ' + y + 'px)'
+          ]
+        }}, {{
+          duration: 850,
+          easing: 'cubic-bezier(.6,0,.2,1)',
+          pseudoElement: '::view-transition-new(root)'
+        }});
+      }}).catch(function(){{}});
+      vt.finished.then(vtEnd, vtEnd);
     }});
   }}
   try {{
