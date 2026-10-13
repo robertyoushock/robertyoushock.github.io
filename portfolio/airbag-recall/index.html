@@ -22,12 +22,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=Hanken+Grotesk:ital,wght@1,300&family=Manrope:wght@400;500&family=Outfit:wght@500&display=swap">
-<link rel="stylesheet" href="/assets/site.css?v=de4d8460">
+<link rel="stylesheet" href="/assets/site.css?v=2a9ad285">
+<script>
+(function(){
+  var pref = localStorage.getItem('theme-preference');
+  var theme = pref || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', theme);
+  var m = document.querySelector('meta[name="theme-color"]');
+  if (m) m.setAttribute('content', theme === 'light' ? '#FAF7F4' : '#1F1D1D');
+})();
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="topbar-wrap"><header class="topbar"><a class="home" href="/">Robert Youshock</a><a class="pill sm back" href="/#projects"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> all projects</a></header></div>
+<div class="topbar-wrap"><header class="topbar"><a class="home" href="/">Robert Youshock</a><div style="display:flex;align-items:center;gap:8px;"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button><a class="pill sm back" href="/#projects"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> all projects</a></div></header></div>
 <main id="main" class="proj">
   <p class="eyebrow rise">Motion</p>
   <h1 class="rise d1">Airbag Recall</h1>
@@ -72,6 +81,32 @@ document.querySelectorAll('.player[data-video] button').forEach(function (b) {
     p.innerHTML = ''; p.appendChild(f);
   });
 });
+</script>
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  function setTheme(t, save) {
+    root.setAttribute('data-theme', t);
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', t === 'light' ? '#FAF7F4' : '#1F1D1D');
+    if (save) { try { localStorage.setItem('theme-preference', t); } catch(e){} }
+  }
+  if (btn) {
+    btn.addEventListener('click', function() {
+      var cur = root.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      var next = cur === 'light' ? 'dark' : 'light';
+      setTheme(next, true);
+    });
+  }
+  try {
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme-preference')) {
+        setTheme(e.matches ? 'light' : 'dark', false);
+      }
+    });
+  } catch(e){}
+})();
 </script>
 </body>
 </html>
