@@ -452,33 +452,189 @@ footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height
   background: var(--ink);
   color: var(--cream);
 }
-[data-theme="light"] .nav {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(24, 22, 21, 0.12);
-  color: #181615;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
+/* Sticky nav (only when scrolled down over the main content) */
+.stuck .nav,
+[data-theme="light"].stuck .nav,
 [data-theme="light"] .stuck .nav {
-  background: rgba(250, 247, 244, 0.9);
+  background: rgba(250, 247, 244, 0.92);
   border-color: rgba(24, 22, 21, 0.15);
+  color: #181615;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
 }
-[data-theme="light"] .nav a.on {
+[data-theme="light"].stuck .nav a,
+[data-theme="light"] .stuck .nav a {
+  color: #181615;
+}
+[data-theme="light"].stuck .nav a.on,
+[data-theme="light"] .stuck .nav a.on {
   background: rgba(24, 22, 21, 0.08);
 }
-[data-theme="light"] .nav .hl {
+[data-theme="light"].stuck .nav .hl,
+[data-theme="light"] .stuck .nav .hl {
   background: rgba(24, 22, 21, 0.08);
 }
-[data-theme="light"] .nav i {
+[data-theme="light"].stuck .nav i,
+[data-theme="light"] .stuck .nav i {
   background: rgba(24, 22, 21, 0.15);
 }
-[data-theme="light"] .theme-toggle {
+[data-theme="light"].stuck .theme-toggle,
+[data-theme="light"] .stuck .theme-toggle {
   color: #181615;
   background: rgba(24, 22, 21, 0.06);
 }
-[data-theme="light"] .theme-toggle:hover {
+[data-theme="light"].stuck .theme-toggle:hover,
+[data-theme="light"] .stuck .theme-toggle:hover {
   background: rgba(24, 22, 21, 0.12);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   GENERAL RULE: TEXT ON GRADIENT = WHITE (regardless of light/dark)
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Hero gradient: all text and chrome stay pure white */
+.hero,
+.hero .name,
+.hero .mark,
+.hero .hero-tr,
+.hero .hero-foot,
+.hero .hero-foot em,
+.hero .hero-br,
+[data-theme="light"] .hero,
+[data-theme="light"] .hero .name,
+[data-theme="light"] .hero .mark,
+[data-theme="light"] .hero .hero-tr,
+[data-theme="light"] .hero .hero-foot,
+[data-theme="light"] .hero .hero-foot em,
+[data-theme="light"] .hero .hero-br {
+  color: #FFFFFF !important;
+}
+
+.hero .hero-tr b,
+[data-theme="light"] .hero .hero-tr b {
+  background: #FFFFFF !important;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.22) !important;
+}
+
+.hero .hero-bl i,
+[data-theme="light"] .hero .hero-bl i {
+  background: #FFFFFF !important;
+}
+
+.hero .hero-foot s,
+[data-theme="light"] .hero .hero-foot s {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* 2. Floating nav resting over the hero gradient (when NOT stuck) */
+:not(.stuck) .nav,
+[data-theme="light"]:not(.stuck) .nav,
+[data-theme="light"] :not(.stuck) .nav {
+  background: rgba(255, 255, 255, 0.13) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 30px rgba(120, 30, 10, 0.12) !important;
+}
+
+:not(.stuck) .nav a,
+[data-theme="light"]:not(.stuck) .nav a,
+[data-theme="light"] :not(.stuck) .nav a {
+  color: #FFFFFF !important;
+}
+
+:not(.stuck) .nav a.on,
+[data-theme="light"]:not(.stuck) .nav a.on,
+[data-theme="light"] :not(.stuck) .nav a.on {
+  background: rgba(255, 255, 255, 0.16) !important;
+  color: #FFFFFF !important;
+}
+
+:not(.stuck) .nav .hl,
+[data-theme="light"]:not(.stuck) .nav .hl,
+[data-theme="light"] :not(.stuck) .nav .hl {
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+:not(.stuck) .nav i,
+[data-theme="light"]:not(.stuck) .nav i,
+[data-theme="light"] :not(.stuck) .nav i {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+:not(.stuck) .theme-toggle,
+[data-theme="light"]:not(.stuck) .theme-toggle,
+[data-theme="light"] :not(.stuck) .theme-toggle {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+}
+
+:not(.stuck) .theme-toggle:hover,
+[data-theme="light"]:not(.stuck) .theme-toggle:hover,
+[data-theme="light"] :not(.stuck) .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+}
+
+/* 3. Hot stat card on gradient */
+.num.hot,
+.num.hot strong,
+[data-theme="light"] .num.hot,
+[data-theme="light"] .num.hot strong {
+  color: #FFFFFF !important;
+}
+
+.num.hot p,
+.num.hot small,
+[data-theme="light"] .num.hot p,
+[data-theme="light"] .num.hot small {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* 4. CTA gradient section at bottom */
+.cta,
+.cta .say,
+.cta .say .it,
+[data-theme="light"] .cta,
+[data-theme="light"] .cta .say,
+[data-theme="light"] .cta .say .it {
+  color: #FFFFFF !important;
+}
+
+.cta p,
+[data-theme="light"] .cta p {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Outline pills on CTA gradient: white border, white text */
+.cta .pill:not(.fill),
+[data-theme="light"] .cta .pill:not(.fill) {
+  border-color: rgba(255, 255, 255, 0.75) !important;
+  color: #FFFFFF !important;
+  background: transparent !important;
+}
+
+/* Filled pill on CTA gradient: crisp white pill */
+.cta .pill.fill,
+[data-theme="light"] .cta .pill.fill {
+  background: #FFFFFF !important;
+  color: #181615 !important;
+  border-color: #FFFFFF !important;
+}
+
+@media (hover: hover) {
+  .cta .pill:not(.fill):hover,
+  [data-theme="light"] .cta .pill:not(.fill):hover {
+    background: #FFFFFF !important;
+    color: #181615 !important;
+    border-color: #FFFFFF !important;
+  }
+  .cta .pill.fill:hover,
+  [data-theme="light"] .cta .pill.fill:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+  }
+}
+
 [data-theme="light"] .frame {
   background: #EFE7E1;
 }
@@ -556,21 +712,21 @@ footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height
 [data-theme="light"] .xps .box:not(.now) em {
   color: rgba(24, 22, 21, 0.7);
 }
-[data-theme="light"] .pill {
+[data-theme="light"] .pill:not(.cta .pill) {
   border-color: rgba(24, 22, 21, 0.35);
   color: #181615;
 }
-[data-theme="light"] .pill.fill {
+[data-theme="light"] .pill.fill:not(.cta .pill) {
   background: #181615;
   color: #FAF7F4;
   border-color: #181615;
 }
-[data-theme="light"] .pill:hover {
+[data-theme="light"] .pill:not(.cta .pill):hover {
   background: #181615;
   color: #FAF7F4;
   border-color: #181615;
 }
-[data-theme="light"] .pill.fill:hover {
+[data-theme="light"] .pill.fill:not(.cta .pill):hover {
   background: transparent;
   color: #181615;
   border-color: #181615;
