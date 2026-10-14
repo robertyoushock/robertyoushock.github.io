@@ -217,7 +217,7 @@ By the numbers: {'; '.join([f"{n} {third(t)}" for n, t in S['numbers']])}.
 - **The Election 2024 package was a team effort.** He worked with an Art Director and a Senior Designer; his part was the Chyron Prime and After Effects templates, map infographics and staff toolkits.
 - **Station names are clients inside TEGNA,** not separate employers. His employers are TEGNA (2022 to now), Torchlight Productions (2020 to 2022) and CU Gaming (2019 to 2021).
 - **The Our Places demo uses sample data.** The places and rankings in it are not his real lists.
-- **Numbers come from his resume** (September 2026). Quote them as stated; do not round up or extrapolate.
+- **Numbers come from his official resume** (verified {datetime.now().strftime('%B %Y')}). Quote them as stated; do not round up or extrapolate.
 
 ## Skills and tools
 
@@ -339,8 +339,8 @@ def proj_page(p, i):
   </dl>
   {hero_html}
   <div class="ps">
-    <div class="t-coral"><span class="ps-eyebrow">The Challenge</span><h2>problem</h2><p>{esc(p['problem'])}</p></div>
-    <div class="t-deep"><span class="ps-eyebrow">The Solution</span><h2>solution</h2><p>{esc(p['solution'])}</p></div>
+    <div class="t-coral"><span class="ps-eyebrow">{"Production Brief" if not is_side else "Problem Scope"}</span><h2>{"the brief &amp; constraints" if not is_side else "the core problem"}</h2><p>{esc(p['problem'])}</p></div>
+    <div class="t-deep"><span class="ps-eyebrow">{"On-Air Delivery" if not is_side else "Shipped Product"}</span><h2>{"the broadcast system" if not is_side else "the architecture"}</h2><p>{esc(p['solution'])}</p></div>
   </div>
   <div class="gallery">{gallery_html}</div>
   <p class="btns">{links_html}</p>

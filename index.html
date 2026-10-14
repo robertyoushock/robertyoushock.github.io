@@ -226,8 +226,8 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 .num p{font-size:16px;line-height:1.5;color:rgba(245,231,223,.74);max-width:240px;margin-top:6px}
 .num small{font-size:15px;font-weight:500;color:var(--mute)}
 .num.hot{position:relative;overflow:hidden;color:var(--off);
-  background:radial-gradient(70% 80% at 105% -5%,#A955CF 0%,rgba(176,91,200,0) 60%),radial-gradient(60% 70% at 70% 30%,rgba(240,102,150,.9),rgba(240,102,150,0) 70%),radial-gradient(55% 55% at 105% 115%,rgba(250,176,66,.35),rgba(246,150,50,0) 70%),#E8481C}
-.num.hot p,.num.hot small{color:#FFFFFF;font-weight:500}
+  background:radial-gradient(70% 80% at 105% -5%,#A955CF 0%,rgba(176,91,200,0) 60%),radial-gradient(60% 70% at 85% 15%,rgba(180,35,90,.85),rgba(180,35,90,0) 70%),radial-gradient(55% 55% at 105% 115%,rgba(250,176,66,.2),rgba(246,150,50,0) 70%),#BA2D0C}
+.num.hot p,.num.hot small{color:#FFFFFF;font-weight:500;text-shadow:0 1px 2px rgba(0,0,0,0.3)}
 
 /* projects */
 .plist{margin-top:clamp(32px,3.6vw,52px);border-top:1px solid var(--line)}
@@ -268,7 +268,7 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 
 /* pipelines */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(32px,3.6vw,52px)}
-.card{position:relative;overflow:hidden;border-radius:24px;background:rgba(255,255,255,.05);padding:36px 36px 40px;display:flex;flex-direction:column;min-height:250px}
+.card{position:relative;overflow:hidden;border-radius:24px;background:rgba(255,255,255,.05);padding:36px 36px 40px;display:flex;flex-direction:column;min-height:250px;cursor:default}
 .card>*{position:relative;z-index:1}
 .card::before{content:"";position:absolute;z-index:0;left:-230px;top:-230px;width:460px;height:460px;border-radius:50%;pointer-events:none;opacity:0;
   background:radial-gradient(closest-side,rgba(240,102,140,.22),rgba(232,72,28,.1) 45%,rgba(232,72,28,0));transform:translate3d(var(--mx,0px),var(--my,0px),0);transition:opacity .5s ease}
@@ -276,7 +276,11 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 .card .tag{font-size:15px;font-weight:500;color:var(--mute);display:flex;justify-content:space-between;align-items:center}
 .card .tag .badge{font-size:12.5px;font-weight:500;letter-spacing:.02em;padding:3px 10px;border-radius:999px;border:1px solid rgba(245,231,223,.2);color:var(--cream);background:rgba(255,255,255,.06)}
 .card h3{font-family:var(--display);font-weight:700;font-size:clamp(34px,3.47vw,60px);line-height:1;letter-spacing:-.04em;text-transform:lowercase;margin:auto 0 16px;padding-top:40px}
-.card p{font-size:18px;line-height:1.55;color:rgba(245,231,223,.8);max-width:540px}
+.card p{font-size:18px;line-height:1.55;color:rgba(245,231,223,.85);max-width:540px}
+.card-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.card-tech span{font-family:var(--body);font-size:12.5px;font-weight:500;color:var(--mute);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:6px;padding:3px 9px}
+.pipe-note{margin-top:24px;font-size:14.5px;color:var(--mute);text-align:center}
+.pipe-note b{color:var(--cream);font-weight:500}
 
 /* playground */
 .play{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(32px,3.6vw,52px)}
@@ -324,13 +328,13 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 .next{padding-top:clamp(72px,7.2vw,104px);overflow-x:clip}
 .next h2{font-size:clamp(84px,12.2vw,214px);letter-spacing:-.055em;text-align:center;will-change:transform}
 .cta{position:relative;margin-top:clamp(36px,4.2vw,60px);border-radius:24px;overflow:hidden;isolation:isolate;padding:clamp(30px,4.2vw,60px) clamp(24px,4.4vw,64px) clamp(30px,3.9vw,56px);color:var(--off);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:clamp(28px,4.2vw,60px);align-items:end;
-  background:radial-gradient(70% 90% at 10% 100%, #DB3D17 0%, rgba(219,61,23,0) 70%),#E8481C}
+  background:radial-gradient(70% 90% at 10% 100%, #B82806 0%, rgba(184,40,6,0) 70%),#C4320E}
 .cta::after{opacity:.3}
 .cta>*{position:relative;z-index:1}
 .cta>.blobs{position:absolute;z-index:0}
 .cta .say{font-family:var(--display);font-weight:700;font-size:clamp(42px,5.83vw,100px);line-height:.98;letter-spacing:-.045em}
 .cta .say .it{font-size:.881em;font-weight:300}
-.cta p{font-size:20px;font-weight:500;line-height:1.55;color:#FFFFFF}
+.cta p{font-size:20px;font-weight:500;line-height:1.55;color:#FFFFFF;text-shadow:0 1px 2px rgba(0,0,0,0.3)}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .cta .pill{border-color:rgba(255,255,255,.75)}
 .cta .pill.fill{background:var(--off);color:var(--ink);border-color:var(--off)}
@@ -718,6 +722,17 @@ html[data-theme="light"].stuck .theme-toggle:hover {
 [data-theme="light"] .card p {
   color: rgba(24, 22, 21, 0.82);
 }
+[data-theme="light"] .card-tech span {
+  background: rgba(24, 22, 21, 0.04);
+  border-color: var(--line);
+  color: rgba(24, 22, 21, 0.72);
+}
+[data-theme="light"] .pipe-note {
+  color: rgba(24, 22, 21, 0.65);
+}
+[data-theme="light"] .pipe-note b {
+  color: #181615;
+}
 [data-theme="light"] .pcard {
   background: #FFFFFF;
   border: 1px solid var(--line);
@@ -993,11 +1008,32 @@ html[data-theme="light"].stuck .theme-toggle:hover {
   <div class="eyebrow">tools, pilots &amp; pipelines <span>03</span></div>
   <p class="statement">The work you <span class="it">don't see on air.</span></p>
   <div class="split">
-    <article class="card"><div class="tag"><span>pilot &amp; beta leadership</span><span class="badge">internal · TEGNA</span></div><h3>axis maps beta pilot</h3><p>20+ field participants across 15 stations, working directly with Chyron's product and engineering team. I built the feature-tracker dashboard used to judge the rollout.</p></article>
-    <article class="card"><div class="tag"><span>generative ai production</span><span class="badge">internal · TEGNA</span></div><h3>gen-ai virtual-set pipeline</h3><p>AI-rendered virtual sets in Firefly and Imagen for station projects, handed off production-ready to the 3D team.</p></article>
-    <article class="card"><div class="tag"><span>scripting &amp; tools</span><span class="badge">internal · TEGNA</span></div><h3>three automation systems</h3><p>A script that re-skins a whole sports league's monitors and open animations; one that generates on-brand streaming banners, tiles and marquees; an After Effects plugin for the team's top three daily tasks.</p></article>
-    <article class="card"><div class="tag"><span>training &amp; mentoring</span><span class="badge">internal · TEGNA</span></div><h3>gen-ai enablement program</h3><p>Built the department's AI training from scratch; mentored three tenured designers and onboarded six new hires.</p></article>
+    <article class="card">
+      <div class="tag"><span>pilot &amp; beta leadership</span><span class="badge">internal · TEGNA</span></div>
+      <h3>axis maps beta pilot</h3>
+      <p>20+ field participants across 15 stations, working directly with Chyron's product and engineering team. I built the feature-tracker dashboard used to judge the rollout.</p>
+      <div class="card-tech"><span>Chyron Prime</span><span>Feature Dashboard</span><span>15 Stations</span></div>
+    </article>
+    <article class="card">
+      <div class="tag"><span>generative ai production</span><span class="badge">internal · TEGNA</span></div>
+      <h3>gen-ai virtual-set pipeline</h3>
+      <p>AI-rendered virtual sets in Firefly and Imagen for station projects, handed off production-ready to the 3D team.</p>
+      <div class="card-tech"><span>Adobe Firefly</span><span>Google Imagen</span><span>3D / C4D Handoff</span></div>
+    </article>
+    <article class="card">
+      <div class="tag"><span>scripting &amp; tools</span><span class="badge">internal · TEGNA</span></div>
+      <h3>three automation systems</h3>
+      <p>A script that re-skins a whole sports league's monitors and open animations; one that generates on-brand streaming banners, tiles and marquees; an After Effects plugin for the team's top three daily tasks.</p>
+      <div class="card-tech"><span>ExtendScript / JSX</span><span>After Effects API</span><span>Premiere Pro</span></div>
+    </article>
+    <article class="card">
+      <div class="tag"><span>training &amp; mentoring</span><span class="badge">internal · TEGNA</span></div>
+      <h3>gen-ai enablement program</h3>
+      <p>Built the department's AI training from scratch; mentored three tenured designers and onboarded six new hires.</p>
+      <div class="card-tech"><span>Curriculum Design</span><span>Enterprise AI</span><span>Design Mentorship</span></div>
+    </article>
   </div>
+  <p class="pipe-note"><b>Proprietary internal systems</b> · Architecture diagrams and scripting logic available during technical interviews</p>
 </section>
 
 <!-- ═════════ PLAYGROUND ═════════ -->
@@ -1372,7 +1408,25 @@ boltIn.addEventListener('animationend',function(e){ if(e.animationName==='zap') 
   }};
 })();
 
-/* ── fine-pointer extras: preview, cursor, magnetic, tilt, spotlight ── */
+/* ── project motion frames & fine-pointer extras ── */
+var projectFrames = {
+  'tegna-elections-24': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp', '5.webp'],
+  'key-bridge-collapse': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
+  'to-the-point-wind-turbines': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
+  'manchester-road-race': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
+  'earthquake-risk': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
+  'airbag-recall': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp']
+};
+if(W.requestIdleCallback){
+  requestIdleCallback(function(){
+    Object.keys(projectFrames).forEach(function(s){
+      projectFrames[s].forEach(function(f){
+        var preload=new Image(); preload.src='/assets/work/'+s+'/'+f;
+      });
+    });
+  });
+}
+
 var pv=null, cur=null, mags=[], tilts=[];
 if(FINE){
   /* floating project preview with kinetic motion reels */
@@ -1384,23 +1438,6 @@ if(FINE){
     d.body.appendChild(el);
     pv={el:el,x:0,y:0,r:0,on:false,w:0,h:0};
     plist.classList.add('float');
-    var projectFrames = {
-      'tegna-elections-24': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp', '5.webp'],
-      'key-bridge-collapse': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
-      'to-the-point-wind-turbines': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
-      'manchester-road-race': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
-      'earthquake-risk': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
-      'airbag-recall': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp']
-    };
-    if(W.requestIdleCallback){
-      requestIdleCallback(function(){
-        Object.keys(projectFrames).forEach(function(s){
-          projectFrames[s].forEach(function(f){
-            var preload=new Image(); preload.src='/assets/work/'+s+'/'+f;
-          });
-        });
-      });
-    }
     var animTimer=null, activeRow=-1, curFrame=0;
     var stopAnim=function(){
       if(animTimer){ clearInterval(animTimer); animTimer=null }
@@ -1473,6 +1510,38 @@ if(FINE){
       var r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left).toFixed(0)+'px'); el.style.setProperty('--my',(e.clientY-r.top).toFixed(0)+'px');
     },{passive:true});
   });
+}
+
+/* touch-device kinetic preview: scroll-triggered frame cycling on mobile/touch */
+if(!FINE && 'IntersectionObserver' in W){
+  var REDUCED = W.matchMedia && W.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!REDUCED){
+    var mRows = $$('.prow');
+    var mObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var r = entry.target;
+        if(entry.isIntersecting && !r._cycled){
+          r._cycled = true;
+          var slug = r.getAttribute('href').replace(/^\/portfolio\/|\/$/g, '');
+          var frames = projectFrames[slug];
+          var im = $('.thumb img', r);
+          if(frames && frames.length > 1 && im){
+            var f = 0;
+            var t = setInterval(function(){
+              f++;
+              if(f >= frames.length){
+                clearInterval(t);
+                im.src = '/assets/work/' + slug + '/cover.webp';
+              } else {
+                im.src = '/assets/work/' + slug + '/' + frames[f];
+              }
+            }, 600);
+          }
+        }
+      });
+    }, { rootMargin: '-15% 0px -15% 0px', threshold: 0.5 });
+    mRows.forEach(function(r){ mObs.observe(r); });
+  }
 }
 
 /* ── frame loop ── */
