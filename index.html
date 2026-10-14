@@ -1324,13 +1324,14 @@ if(!FINE&&W.DeviceOrientationEvent&&typeof W.DeviceOrientationEvent.requestPermi
     ptr.x=clamp(e.gamma/28,-1,1); ptr.y=clamp((e.beta-42)/28,-1,1);
   },{passive:true});
 }
-bolt.addEventListener('click',function(){
+function zapBolt(){
   boltIn.classList.remove('zap'); void boltIn.offsetWidth; boltIn.classList.add('zap');
-});
-bolt.addEventListener('keydown',function(e){
-  if(e.key==='Enter'||e.key===' '){
+}
+bolt.addEventListener('click', zapBolt);
+bolt.addEventListener('keydown', function(e){
+  if(e.key === 'Enter' || e.key === ' ' || e.code === 'Space'){
     e.preventDefault();
-    boltIn.classList.remove('zap'); void boltIn.offsetWidth; boltIn.classList.add('zap');
+    zapBolt();
   }
 });
 boltIn.addEventListener('animationend',function(e){ if(e.animationName==='zap') boltIn.classList.remove('zap') });
