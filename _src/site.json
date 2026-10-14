@@ -253,7 +253,7 @@
       "title": "Cairn",
       "kicker": "Side project · Web tool",
       "blurb": "A free web tool for finding a US map boundary in plain words, checking it on the map, and downloading it for Google Earth, a GPS watch or mapping software. It's built for people who have never opened ArcGIS, and it's quick enough for people who use it every day.",
-      "demo": "https://robertyoushock.com/cairn/",
+      "demo": "https://www.robertyoushock.com/cairn/",
       "demoLabel": "Open Cairn",
       "repo": "https://github.com/robertyoushock/Cairn",
       "repoLabel": "Code on GitHub",

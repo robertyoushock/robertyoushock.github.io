@@ -29,7 +29,7 @@ By the numbers: 240+ design, automation and evaluation projects shipped in 2.5 y
 - [Earthquake Risk](https://www.robertyoushock.com/portfolio/earthquake-risk/) (2024, KREM). Motion. Built in After Effects, Google Earth Studio.
 - [Airbag Recall](https://www.robertyoushock.com/portfolio/airbag-recall/) (2024, KARE 11). Motion. Built in After Effects.
 - [Our Places](https://www.robertyoushock.com/portfolio/our-places/) (2026, personal project). A phone-first web app for two people to keep a top 10 in every food category, plus a wish list of places to try. It has a map with category pins, offline mode, drag to re-rank, and Spotify Wrapped-style story cards drawn on the phone. It runs for $0 a month. Live at https://eats.robertyoushock.com/?demo
-- [Cairn](https://www.robertyoushock.com/portfolio/cairn/) (2026, personal project). A free web tool for finding a US map boundary in plain words, checking it on the map, and downloading it for Google Earth, a GPS watch or mapping software. It's built for people who have never opened ArcGIS, and it's quick enough for people who use it every day. Live at https://robertyoushock.com/cairn/
+- [Cairn](https://www.robertyoushock.com/portfolio/cairn/) (2026, personal project). A free web tool for finding a US map boundary in plain words, checking it on the map, and downloading it for Google Earth, a GPS watch or mapping software. It's built for people who have never opened ArcGIS, and it's quick enough for people who use it every day. Live at https://www.robertyoushock.com/cairn/
 
 ## True, and easy to get wrong
 

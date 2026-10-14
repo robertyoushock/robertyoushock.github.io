@@ -46,8 +46,9 @@ BACK = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="curr
 PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>'
 THEME_BTN = '<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>'
 
-def page(title, desc, path, body, ld=None, image='/assets/og.png'):
+def page(title, desc, path, body, ld=None, image='/assets/og.png', image_w=1200, image_h=630, image_alt=None):
     ld_tag = f'\n<script type="application/ld+json">{json.dumps(ld)}</script>' if ld else ''
+    alt_text = image_alt or title
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -57,11 +58,19 @@ def page(title, desc, path, body, ld=None, image='/assets/og.png'):
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{SITE}{path}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="{esc(S['name'])}">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{SITE}{path}">
 <meta property="og:image" content="{SITE}{image}">
+<meta property="og:image:width" content="{image_w}">
+<meta property="og:image:height" content="{image_h}">
+<meta property="og:image:alt" content="{esc(alt_text)}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(desc)}">
+<meta name="twitter:image" content="{SITE}{image}">
+<meta name="twitter:image:alt" content="{esc(alt_text)}">
 <meta name="theme-color" content="#1F1D1D">
 <meta name="author" content="{S['name']}">
 <link rel="alternate" type="text/markdown" href="/llms.txt" title="Plain-text summary for AI assistants">
@@ -300,6 +309,9 @@ def proj_page(p, i):
             'creator': {'@type': 'Person', 'name': S['name'], 'url': SITE + '/'}
         }
         image_url = f"/assets/side/{p['hero']}.webp"
+        image_w = p.get("heroW", 1600)
+        image_h = p.get("heroH", 900)
+        image_alt = f"{p['title']} application interface"
     else:
         imgs_list = imgs(p['slug'])
         gallery_html = ''.join([
@@ -324,6 +336,9 @@ def proj_page(p, i):
             'creator': {'@type': 'Person', 'name': S['name'], 'url': SITE + '/'}
         }
         image_url = f"/assets/work/{p['slug']}/cover.webp"
+        image_w = 1600
+        image_h = 900
+        image_alt = f"{p['title']} broadcast motion design cover"
 
     body_html = f"""
 <div class="topbar-wrap"><header class="topbar"><a class="home" href="/">{S['name']}</a><div style="display:flex;align-items:center;gap:8px;">{THEME_BTN}<a class="pill sm back" href="/#projects">{BACK} all projects</a></div></header></div>
@@ -367,7 +382,10 @@ document.querySelectorAll('.player[data-video] button').forEach(function (b) {{
         path=f"/portfolio/{p['slug']}/",
         body=body_html,
         ld=ld_data,
-        image=image_url
+        image=image_url,
+        image_w=image_w,
+        image_h=image_h,
+        image_alt=image_alt
     )
 
 def write_file(rel_path, content):
@@ -421,4 +439,42 @@ write_file("robots.txt", robots_content)
 # 8. .nojekyll
 write_file(".nojekyll", "")
 
-print(f"Built {len(all_projects)} portfolio subpages + agents + 404 + sitemap with CSS hash: {CSSV}")
+# 9. _headers for Edge CDN distribution
+headers_content = """# Edge & CDN Header Rules for Public Distribution
+# Compatible with Cloudflare Pages, Netlify, and reverse-proxy CDN edge servers.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Cache static hashed and binary media assets for 1 year immutable
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache HTML documents with must-revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/portfolio/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/agents/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/llms.txt
+  Cache-Control: public, max-age=86400
+"""
+write_file("_headers", headers_content)
+
+print(f"Built {len(all_projects)} portfolio subpages + agents + 404 + sitemap + headers with CSS hash: {CSSV}")
