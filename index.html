@@ -273,7 +273,8 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 .card::before{content:"";position:absolute;z-index:0;left:-230px;top:-230px;width:460px;height:460px;border-radius:50%;pointer-events:none;opacity:0;
   background:radial-gradient(closest-side,rgba(240,102,140,.22),rgba(232,72,28,.1) 45%,rgba(232,72,28,0));transform:translate3d(var(--mx,0px),var(--my,0px),0);transition:opacity .5s ease}
 @media (hover:hover) and (pointer:fine){.card:hover::before{opacity:1}}
-.card .tag{font-size:15px;font-weight:500;color:var(--mute);display:flex;justify-content:space-between}
+.card .tag{font-size:15px;font-weight:500;color:var(--mute);display:flex;justify-content:space-between;align-items:center}
+.card .tag .badge{font-size:12.5px;font-weight:500;letter-spacing:.02em;padding:3px 10px;border-radius:999px;border:1px solid rgba(245,231,223,.2);color:var(--cream);background:rgba(255,255,255,.06)}
 .card h3{font-family:var(--display);font-weight:700;font-size:clamp(34px,3.47vw,60px);line-height:1;letter-spacing:-.04em;text-transform:lowercase;margin:auto 0 16px;padding-top:40px}
 .card p{font-size:18px;line-height:1.55;color:rgba(245,231,223,.8);max-width:540px}
 
@@ -706,6 +707,11 @@ html[data-theme="light"].stuck .theme-toggle:hover {
 [data-theme="light"] .card .tag {
   color: rgba(24, 22, 21, 0.62);
 }
+[data-theme="light"] .card .tag .badge {
+  border-color: rgba(24, 22, 21, 0.16);
+  color: #181615;
+  background: rgba(24, 22, 21, 0.04);
+}
 [data-theme="light"] .card h3 {
   color: #181615;
 }
@@ -988,10 +994,10 @@ html[data-theme="light"].stuck .theme-toggle:hover {
   <div class="eyebrow">tools, pilots &amp; pipelines <span>03</span></div>
   <p class="statement">The work you <span class="it">don't see on air.</span></p>
   <div class="split">
-    <article class="card"><div class="tag"><span>pilot &amp; beta leadership</span><span>a</span></div><h3>axis maps beta pilot</h3><p>20+ field participants across 15 stations, working directly with Chyron's product and engineering team. I built the feature-tracker dashboard used to judge the rollout.</p></article>
-    <article class="card"><div class="tag"><span>generative ai production</span><span>b</span></div><h3>gen-ai virtual-set pipeline</h3><p>AI-rendered virtual sets in Firefly and Imagen for station projects, handed off production-ready to the 3D team.</p></article>
-    <article class="card"><div class="tag"><span>scripting &amp; tools</span><span>c</span></div><h3>three automation systems</h3><p>A script that re-skins a whole sports league's monitors and open animations; one that generates on-brand streaming banners, tiles and marquees; an After Effects plugin for the team's top three daily tasks.</p></article>
-    <article class="card"><div class="tag"><span>training &amp; mentoring</span><span>d</span></div><h3>gen-ai enablement program</h3><p>Built the department's AI training from scratch; mentored three tenured designers and onboarded six new hires.</p></article>
+    <article class="card"><div class="tag"><span>pilot &amp; beta leadership</span><span class="badge">internal · TEGNA</span></div><h3>axis maps beta pilot</h3><p>20+ field participants across 15 stations, working directly with Chyron's product and engineering team. I built the feature-tracker dashboard used to judge the rollout.</p></article>
+    <article class="card"><div class="tag"><span>generative ai production</span><span class="badge">internal · TEGNA</span></div><h3>gen-ai virtual-set pipeline</h3><p>AI-rendered virtual sets in Firefly and Imagen for station projects, handed off production-ready to the 3D team.</p></article>
+    <article class="card"><div class="tag"><span>scripting &amp; tools</span><span class="badge">internal · TEGNA</span></div><h3>three automation systems</h3><p>A script that re-skins a whole sports league's monitors and open animations; one that generates on-brand streaming banners, tiles and marquees; an After Effects plugin for the team's top three daily tasks.</p></article>
+    <article class="card"><div class="tag"><span>training &amp; mentoring</span><span class="badge">internal · TEGNA</span></div><h3>gen-ai enablement program</h3><p>Built the department's AI training from scratch; mentored three tenured designers and onboarded six new hires.</p></article>
   </div>
 </section>
 
