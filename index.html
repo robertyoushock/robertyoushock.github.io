@@ -63,7 +63,7 @@ html{background:var(--ink);-webkit-text-size-adjust:100%;scroll-padding-top:84px
 body{font-family:var(--body);font-size:19px;line-height:1.6;color:var(--cream);background:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-a:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:8px}
+a:focus-visible, button:focus-visible, .bolt:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:8px}
 ::selection{background:var(--orange);color:#fff}
 
 /* ───────── fixed chrome ───────── */
@@ -242,14 +242,15 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
   .prow.h .meta{transform:translate3d(26px,0,0)}
   .prow.h .n{color:var(--cream)}
   .plist.float .prow.h .thumb{opacity:0;scale:.86}
+  .plist.float.hov .thumb{opacity:0 !important;pointer-events:none}
 }
 .prow:focus-visible h3{background-position:0 0}
 /* floating preview + cursor (created by JS on fine pointers only) */
 .pv{position:fixed;left:0;top:0;z-index:60;width:min(430px,32vw);aspect-ratio:16/9;pointer-events:none;will-change:transform}
-.pv-in{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:var(--ink2);box-shadow:0 30px 80px rgba(0,0,0,.5);opacity:0;transform:scale(.55);transition:opacity .3s ease,transform .5s var(--eo)}
-.pv.on .pv-in{opacity:1;transform:none;transition:opacity .3s ease,transform .6s var(--spring)}
-.pv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.14);transition:opacity .4s ease,transform .9s var(--eo)}
-.pv img.cur{opacity:1;transform:none}
+.pv-in{position:absolute;inset:0;border-radius:18px;overflow:hidden;background:#181615;box-shadow:0 30px 80px rgba(0,0,0,.5);opacity:0;transform:scale(.88);transition:opacity .25s ease,transform .35s var(--eo);-webkit-mask-image:-webkit-radial-gradient(white,black);isolation:isolate}
+.pv.on .pv-in{opacity:1;transform:none;transition:opacity .25s ease,transform .35s var(--eo)}
+.pv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s ease}
+.pv img.cur{opacity:1}
 .cur{position:fixed;left:0;top:0;z-index:100;width:36px;height:36px;margin:-18px 0 0 -18px;pointer-events:none;will-change:transform}
 .cur b{display:block;width:100%;height:100%;border-radius:50%;border:1.5px solid rgba(245,231,223,.75);box-shadow:0 0 0 1px rgba(31,29,29,.18);opacity:0;transform:scale(.4);transition:transform .45s var(--eo),opacity .3s ease,background-color .3s ease}
 .cur.on b{opacity:1;transform:none}
@@ -297,7 +298,7 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 .edu small{font-size:15px;font-weight:500;color:var(--mute)}
 .kcol{display:flex;flex-direction:column;gap:16px}
 .box{border-radius:24px;background:rgba(255,255,255,.05);padding:32px 34px 36px}
-.box h4{font-family:var(--ital);font-style:italic;font-weight:300;font-size:clamp(30px,2.64vw,40px);letter-spacing:-.02em;line-height:1.1;margin-bottom:22px}
+.box h3,.box h4{font-family:var(--ital);font-style:italic;font-weight:300;font-size:clamp(30px,2.64vw,40px);letter-spacing:-.02em;line-height:1.1;margin-bottom:22px}
 .box .lbl{font-size:15px;font-weight:500;color:var(--mute);margin:24px 0 12px}
 .box .lbl:first-of-type{margin-top:0}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -329,7 +330,7 @@ footer{padding:72px max(var(--pad),calc((100vw - 1700px)/2)) 64px;display:grid;g
 footer .big{display:flex;align-items:center;gap:18px;font-family:'Outfit',sans-serif;font-weight:500;font-size:clamp(32px,3.05vw,48px);letter-spacing:-.035em;line-height:1}
 footer .big svg{width:48px;height:48px;flex:none}
 footer .sub{margin-top:16px;font-size:16px;color:var(--mute);max-width:360px}
-footer h5{font-size:15px;font-weight:500;color:var(--mute);margin-bottom:14px}
+footer h3,footer h4,footer h5,footer .lbl{font-size:15px;font-weight:500;color:var(--mute);margin:0 0 14px}
 footer ul{list-style:none;font-size:19px;line-height:1.9}
 footer ul a{position:relative;display:inline-block}
 footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:100% 50%;transition:transform .5s var(--eo)}
@@ -679,8 +680,8 @@ html[data-theme="light"].stuck .theme-toggle:hover {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
 }
 [data-theme="light"] .pv-in {
-  background: #FFFFFF;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  background: #181615 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
 }
 [data-theme="light"] .cur b {
   border-color: rgba(24, 22, 21, 0.75);
@@ -734,6 +735,7 @@ html[data-theme="light"].stuck .theme-toggle:hover {
   border: 1px solid var(--line);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
+[data-theme="light"] .box:not(.now) h3,
 [data-theme="light"] .box:not(.now) h4 {
   color: #181615;
 }
@@ -844,7 +846,7 @@ html[data-theme="light"].stuck .theme-toggle:hover {
     <div class="stage">
       <h1 class="name" aria-label="robert youshock"><span class="ln">robert</span><span class="ln">youshock</span></h1>
 
-      <div class="bolt" aria-hidden="true"><div class="bolt-in"><div class="bolt-tilt">
+      <div class="bolt" role="button" tabindex="0" aria-label="Zap lightning bolt"><div class="bolt-in"><div class="bolt-tilt">
       <svg viewBox="0 0 260 400">
         <defs>
           <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -941,32 +943,32 @@ html[data-theme="light"].stuck .theme-toggle:hover {
     <a class="prow first" href="/portfolio/tegna-elections-24/">
       <span class="n">01</span>
       <div><h3>tegna election 2024</h3><div class="meta"><b>Broadcast package</b><span>TEGNA · 64 stations · 2023–2024 · After Effects, Photoshop, Chyron Prime</span></div></div>
-      <div class="thumb"><img src="/assets/work/tegna-elections-24/cover.webp" alt="TEGNA Election 2024" width="1280" height="720" decoding="async"></div>
+      <div class="thumb"><img src="/assets/work/tegna-elections-24/cover.webp" alt="TEGNA Election 2024" width="1280" height="720" loading="lazy" decoding="async"></div>
     </a>
     <a class="prow" href="/portfolio/key-bridge-collapse/">
       <span class="n">02</span>
       <div><h3>key bridge collapse</h3><div class="meta"><b>Motion · Geospatial</b><span>WUSA9 · 2024</span></div></div>
-      <div class="thumb"><img src="/assets/work/key-bridge-collapse/cover.webp" alt="Key Bridge Collapse" width="1280" height="720" decoding="async"></div>
+      <div class="thumb"><img src="/assets/work/key-bridge-collapse/cover.webp" alt="Key Bridge Collapse" width="1280" height="720" loading="lazy" decoding="async"></div>
     </a>
     <a class="prow" href="/portfolio/to-the-point-wind-turbines/">
       <span class="n">03</span>
       <div><h3>wind turbines</h3><div class="meta"><b>Motion · Geospatial</b><span>To The Point · ABC10 · 2024</span></div></div>
-      <div class="thumb"><img src="/assets/work/to-the-point-wind-turbines/cover.webp" alt="To The Point: Wind Turbines" width="1280" height="720" decoding="async"></div>
+      <div class="thumb"><img src="/assets/work/to-the-point-wind-turbines/cover.webp" alt="To The Point: Wind Turbines" width="1280" height="720" loading="lazy" decoding="async"></div>
     </a>
     <a class="prow" href="/portfolio/manchester-road-race/">
       <span class="n">04</span>
       <div><h3>manchester road race</h3><div class="meta"><b>Geospatial</b><span>FOX61 (WTIC) · 2023 · After Effects, Google Earth Studio</span></div></div>
-      <div class="thumb"><img src="/assets/work/manchester-road-race/cover.webp" alt="Manchester Road Race Map" width="1280" height="720" decoding="async"></div>
+      <div class="thumb"><img src="/assets/work/manchester-road-race/cover.webp" alt="Manchester Road Race Map" width="1280" height="720" loading="lazy" decoding="async"></div>
     </a>
     <a class="prow" href="/portfolio/earthquake-risk/">
       <span class="n">05</span>
       <div><h3>earthquake risk</h3><div class="meta"><b>Motion</b><span>KREM · 2024</span></div></div>
-      <div class="thumb"><img src="/assets/work/earthquake-risk/cover.webp" alt="Earthquake Risk" width="1280" height="720" decoding="async"></div>
+      <div class="thumb"><img src="/assets/work/earthquake-risk/cover.webp" alt="Earthquake Risk" width="1280" height="720" loading="lazy" decoding="async"></div>
     </a>
     <a class="prow" href="/portfolio/airbag-recall/">
       <span class="n">06</span>
       <div><h3>airbag recall</h3><div class="meta"><b>Motion</b><span>KARE 11 · 2024</span></div></div>
-      <div class="thumb"><img src="/assets/work/airbag-recall/cover.webp" alt="Airbag Recall" width="1280" height="720" decoding="async"></div>
+      <div class="thumb"><img src="/assets/work/airbag-recall/cover.webp" alt="Airbag Recall" width="1280" height="720" loading="lazy" decoding="async"></div>
     </a>
   </div>
 </section>
@@ -1025,7 +1027,7 @@ html[data-theme="light"].stuck .theme-toggle:hover {
   <h2>toolkit</h2>
   <div class="kit">
     <div class="box">
-      <h4>What I build with</h4>
+      <h3>What I build with</h3>
       <div class="lbl">technical design</div>
       <div class="chips"><span>JavaScript</span><span>After Effects scripting</span><span>Photoshop &amp; Premiere scripting</span><span>Chyron AXIS &amp; Prime</span><span>Singular Live</span><span>Flowics</span><span>Everviz</span><span>MapCreator &amp; Maputnik</span><span>CUEZ</span></div>
       <div class="lbl">generative ai</div>
@@ -1035,7 +1037,7 @@ html[data-theme="light"].stuck .theme-toggle:hover {
     </div>
     <div class="kcol">
       <div class="box">
-        <h4>Years in the craft</h4>
+        <h3>Years in the craft</h3>
         <div class="sk" style="--w:100%"><span>Motion design</span><b>6 yrs</b><i></i></div>
         <div class="sk" style="--w:50%"><span>Computational data visualization</span><b>3 yrs</b><i></i></div>
         <div class="sk" style="--w:50%"><span>Technical design &amp; automation</span><b>3 yrs</b><i></i></div>
@@ -1084,8 +1086,8 @@ html[data-theme="light"].stuck .theme-toggle:hover {
     </div>
     <p class="sub">creative technologist. technical design, design systems, ai workflows.</p>
   </div>
-  <div><h5>explore</h5><ul><li><a href="#journey">journey</a></li><li><a href="#projects">projects</a></li><li><a href="#playground">playground</a></li><li><a href="#toolkit">toolkit</a></li></ul></div>
-  <div><h5>contact</h5><ul><li><a href="mailto:robertyoushock@gmail.com">email</a></li><li><a href="https://www.linkedin.com/in/robert-youshock-1ba979108/" target="_blank" rel="noopener">linkedin</a></li><li><a href="https://github.com/robertyoushock" target="_blank" rel="noopener">github</a></li><li><a href="https://drive.google.com/file/d/1pe5GCmHrd4w9osHMgBbQyYB7ftix2-LO/view" target="_blank" rel="noopener">resume</a></li></ul></div>
+  <div><p class="lbl">explore</p><ul><li><a href="#journey">journey</a></li><li><a href="#projects">projects</a></li><li><a href="#playground">playground</a></li><li><a href="#toolkit">toolkit</a></li></ul></div>
+  <div><p class="lbl">contact</p><ul><li><a href="mailto:robertyoushock@gmail.com">email</a></li><li><a href="https://www.linkedin.com/in/robert-youshock-1ba979108/" target="_blank" rel="noopener">linkedin</a></li><li><a href="https://github.com/robertyoushock" target="_blank" rel="noopener">github</a></li><li><a href="https://drive.google.com/file/d/1pe5GCmHrd4w9osHMgBbQyYB7ftix2-LO/view" target="_blank" rel="noopener">resume</a></li></ul></div>
   <div class="legal"><span>© 2026 Robert Youshock · Denver, CO</span><a href="/agents/">For agents</a></div>
 </footer>
 
@@ -1324,6 +1326,12 @@ if(!FINE&&W.DeviceOrientationEvent&&typeof W.DeviceOrientationEvent.requestPermi
 }
 bolt.addEventListener('click',function(){
   boltIn.classList.remove('zap'); void boltIn.offsetWidth; boltIn.classList.add('zap');
+});
+bolt.addEventListener('keydown',function(e){
+  if(e.key==='Enter'||e.key===' '){
+    e.preventDefault();
+    boltIn.classList.remove('zap'); void boltIn.offsetWidth; boltIn.classList.add('zap');
+  }
 });
 boltIn.addEventListener('animationend',function(e){ if(e.animationName==='zap') boltIn.classList.remove('zap') });
 
