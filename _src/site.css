@@ -125,6 +125,12 @@ img { display: block; max-width: 100%; height: auto; }
   transition: background-color .3s, transform .3s var(--eo), color .3s;
   -webkit-tap-highlight-color: transparent;
 }
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 999px;
+}
 .theme-toggle:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: scale(1.08);
@@ -600,9 +606,9 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--cream);
 }
 .doc .note {
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 4px solid var(--orange);
-  border-radius: 0 16px 16px 0;
+  background: rgba(232, 72, 28, 0.08);
+  border: 1px solid rgba(232, 72, 28, 0.24);
+  border-radius: 16px;
   padding: 20px 24px;
   margin: 0 0 28px;
   color: var(--cream);
@@ -628,7 +634,11 @@ img { display: block; max-width: 100%; height: auto; }
   to { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ───────── Light theme ───────── */
@@ -729,7 +739,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 [data-theme="light"] .doc .note {
-  background: #FFFFFF;
-  border-left-color: var(--orange);
+  background: rgba(232, 72, 28, 0.05);
+  border: 1px solid rgba(232, 72, 28, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }

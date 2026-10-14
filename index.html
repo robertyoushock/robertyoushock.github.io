@@ -65,6 +65,8 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 a:focus-visible, button:focus-visible, .bolt:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:8px}
 ::selection{background:var(--orange);color:#fff}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:12px;background:var(--cream);color:var(--ink);padding:8px 16px;border-radius:999px;z-index:100;font-weight:500}
 
 /* ───────── fixed chrome ───────── */
 .bar{position:fixed;left:0;right:0;top:0;height:3px;z-index:70;background:var(--grad);transform:scaleX(0);transform-origin:0 50%;pointer-events:none;display:none}
@@ -87,6 +89,7 @@ a:focus-visible, button:focus-visible, .bolt:focus-visible{outline:2px solid var
 ::view-transition-old(root){z-index:1}
 
 .theme-toggle{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;background:rgba(255,255,255,.14);border:0;color:var(--off);cursor:pointer;flex:none;margin-left:4px;transition:background-color .3s,transform .3s var(--eo),color .3s;-webkit-tap-highlight-color:transparent}
+.theme-toggle::after{content:"";position:absolute;inset:-5px;border-radius:999px}
 .theme-toggle:hover{background:rgba(255,255,255,.25);transform:scale(1.08)}
 .theme-toggle:active{transform:scale(.92)}
 .theme-toggle svg{width:17px;height:17px;flex:none;transition:transform .5s var(--eo)}
@@ -163,6 +166,12 @@ a:focus-visible, button:focus-visible, .bolt:focus-visible{outline:2px solid var
 .js.is-in .nav{opacity:1;transform:none}
 .js.is-in.stuck .nav{transform:scale(.94)}
 .js.is-in:not(.intro-done) .nav{transition:opacity .8s ease .95s,transform 1s var(--eo) .95s}
+@media (prefers-reduced-motion:reduce){
+  .hero-tr b{animation:none !important}
+  .js.is-in .hero{animation:none !important}
+  .js.is-in .bolt-in:not(.zap){animation:none !important}
+  .bolt-in.zap{animation:none !important}
+}
 
 /* ───────── dark sections ───────── */
 .main{position:relative;z-index:1;background:var(--ink);overflow-x:clip}
@@ -817,6 +826,7 @@ html[data-theme="light"].stuck .theme-toggle:hover {
 </style>
 </head>
 <body>
+<a class="skip" href="#journey">Skip to content</a>
 
 <div class="bar" aria-hidden="true"></div>
 
