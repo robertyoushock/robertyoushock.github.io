@@ -4,7 +4,7 @@
   --ink: #1F1D1D;
   --ink2: #292626;
   --off: #E9E4DE;
-  --orange: #E8481C;
+  --orange: #FF5E36;
   --amber: #F6A23C;
   --pink: #F0668C;
   --violet: #B05BC8;
@@ -359,31 +359,47 @@ img { display: block; max-width: 100%; height: auto; }
   background: radial-gradient(80% 80% at 100% 0%, rgba(176, 91, 200, 0.14) 0%, rgba(176, 91, 200, 0) 70%), rgba(255, 255, 255, 0.04);
   border-color: rgba(176, 91, 200, 0.3);
 }
+.ps-eyebrow {
+  display: block;
+  font-family: var(--ital);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.ps .t-coral .ps-eyebrow {
+  color: var(--orange);
+}
+.ps .t-deep .ps-eyebrow {
+  color: var(--pink);
+}
 .ps h2 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(30px, 3.2vw, 44px);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
   text-transform: lowercase;
   margin: 0 0 14px;
+  color: var(--cream);
 }
 .ps .t-coral h2 {
   background: linear-gradient(100deg, var(--amber), var(--orange));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .ps .t-deep h2 {
   background: linear-gradient(100deg, var(--pink), var(--violet));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 .ps p {
   font-size: 17px;
   line-height: 1.62;
-  color: rgba(245, 231, 223, 0.82);
+  color: rgba(245, 231, 223, 0.9);
 }
 @media (max-width: 760px) {
   .ps { grid-template-columns: 1fr; }
@@ -523,13 +539,13 @@ img { display: block; max-width: 100%; height: auto; }
 .contact h2 em {
   font-family: var(--ital);
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--orange);
 }
 .contact p {
   font-size: 18px;
   line-height: 1.6;
-  color: rgba(245, 231, 223, 0.8);
+  color: rgba(245, 231, 223, 0.92);
   max-width: 44ch;
   margin: 0;
 }
@@ -647,6 +663,7 @@ img { display: block; max-width: 100%; height: auto; }
   --ink: #FAF7F4;
   --ink2: #FFFFFF;
   --off: #2C2825;
+  --orange: #D83B10;
   --mute: rgba(24, 22, 21, 0.62);
   --line: rgba(24, 22, 21, 0.12);
 }
@@ -736,6 +753,14 @@ img { display: block; max-width: 100%; height: auto; }
   background: #FFFFFF;
   border-color: var(--line);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .contact p {
+  color: rgba(24, 22, 21, 0.85);
+}
+
+[data-theme="light"] .ps p {
+  color: rgba(24, 22, 21, 0.85);
 }
 
 [data-theme="light"] .doc .note {

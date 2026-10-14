@@ -284,8 +284,9 @@ def proj_page(p, i):
     prev_p = all_projects[(i - 1 + len(all_projects)) % len(all_projects)]
 
     if is_side:
-        gallery_html = ''.join([f'<img class="wide free" src="/assets/side/{n}.webp" alt="" loading="lazy">' for n in p.get('gallery', [])])
-        hero_html = f'<div class="player"><img src="/assets/side/{p["hero"]}.webp" alt="{esc(p.get("heroAlt", ""))}" width="{p.get("heroW", 1600)}" height="{p.get("heroH", 900)}"></div>'
+        hero_alt = esc(p.get("heroAlt") or f"{p['title']} app interface")
+        gallery_html = ''.join([f'<img class="wide free" src="/assets/side/{n}.webp" alt="{esc(p["title"])} interface screen {k + 1}" loading="lazy">' for k, n in enumerate(p.get('gallery', []))])
+        hero_html = f'<div class="player"><img src="/assets/side/{p["hero"]}.webp" alt="{hero_alt}" width="{p.get("heroW", 1600)}" height="{p.get("heroH", 900)}"></div>'
         links_html = f'<a class="pill fill" href="{p["demo"]}" target="_blank" rel="noopener">{esc(p["demoLabel"])}</a><a class="pill" href="{p["repo"]}" target="_blank" rel="noopener">{esc(p["repoLabel"])}</a>'
         ld_data = {
             '@context': 'https://schema.org',
@@ -302,14 +303,15 @@ def proj_page(p, i):
     else:
         imgs_list = imgs(p['slug'])
         gallery_html = ''.join([
-            f'<img class="{"wide" if (k == 0 and len(imgs_list) % 2 == 1) else ""}" src="/assets/work/{p["slug"]}/{n}.webp" alt="" loading="lazy" width="1600" height="900">'
+            f'<img class="{"wide" if (k == 0 and len(imgs_list) % 2 == 1) else ""}" src="/assets/work/{p["slug"]}/{n}.webp" alt="{esc(p["title"])} broadcast graphic still {k + 1}" loading="lazy" width="1600" height="900">'
             for k, n in enumerate(imgs_list)
         ])
+        hero_alt = esc(f"{p['title']} broadcast motion design cover")
         if p.get('video'):
-            hero_html = f'<div class="player" data-video="{p["video"]}"><img src="/assets/work/{p["slug"]}/cover.webp" alt="" width="1600" height="900"><button type="button" aria-label="Play the {esc(p["title"])} video"><span class="play">{PLAY}</span>Watch the piece</button></div>'
+            hero_html = f'<div class="player" data-video="{p["video"]}"><img src="/assets/work/{p["slug"]}/cover.webp" alt="{hero_alt}" width="1600" height="900"><button type="button" aria-label="Play the {esc(p["title"])} video"><span class="play">{PLAY}</span>Watch the piece</button></div>'
             links_html = f'<a class="pill fill outlink" href="{p["link"]}" target="_blank" rel="noopener">Watch on YouTube {ARROW_SM}</a>'
         else:
-            hero_html = f'<div class="player"><img src="/assets/work/{p["slug"]}/cover.webp" alt="" width="1600" height="900"></div>'
+            hero_html = f'<div class="player"><img src="/assets/work/{p["slug"]}/cover.webp" alt="{hero_alt}" width="1600" height="900"></div>'
             links_html = f'<a class="pill fill outlink" href="{p["link"]}" target="_blank" rel="noopener">See the story {ARROW_SM}</a>'
         ld_data = {
             '@context': 'https://schema.org',
@@ -337,8 +339,8 @@ def proj_page(p, i):
   </dl>
   {hero_html}
   <div class="ps">
-    <div class="t-coral"><h2>problem</h2><p>{esc(p['problem'])}</p></div>
-    <div class="t-deep"><h2>solution</h2><p>{esc(p['solution'])}</p></div>
+    <div class="t-coral"><span class="ps-eyebrow">The Challenge</span><h2>problem</h2><p>{esc(p['problem'])}</p></div>
+    <div class="t-deep"><span class="ps-eyebrow">The Solution</span><h2>solution</h2><p>{esc(p['solution'])}</p></div>
   </div>
   <div class="gallery">{gallery_html}</div>
   <p class="btns">{links_html}</p>

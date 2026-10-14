@@ -137,10 +137,10 @@ a:focus-visible, button:focus-visible, .bolt:focus-visible{outline:2px solid var
 .prog{position:fixed;left:0;bottom:0;top:auto;z-index:40;pointer-events:none;transform:translate3d(54px,-54px,0)}
 .prog i,.prog i:first-child{width:34px;opacity:.45;transform:scaleX(.53);transform-origin:0 50%;transition:transform .6s var(--eo),opacity .4s ease}
 .prog i.on{opacity:1;transform:none}
-.hero-foot{position:absolute;left:0;right:0;bottom:34px;z-index:6;display:flex;justify-content:center;gap:14px;align-items:center;color:var(--off);font-size:15px;font-weight:500}
+.hero-foot{position:absolute;left:0;right:0;bottom:34px;z-index:6;display:flex;justify-content:center;gap:16px;align-items:center;color:var(--off);font-size:15px;font-weight:500;padding:0 24px;text-align:center}
 .hero-foot em{font-family:var(--ital);font-style:italic;font-weight:300;font-size:24px;letter-spacing:-.01em}
-.hero-foot s{width:44px;height:1px;background:rgba(233,228,222,.6)}
-.hero-br{position:absolute;right:38px;bottom:34px;z-index:6;color:var(--off);font-size:15px;font-weight:500;text-align:right;line-height:1.45}
+.hero-foot s{width:36px;height:1px;background:rgba(233,228,222,.6)}
+.hero-foot .role-lead,.hero-foot .role-sub{white-space:nowrap}
 
 /* hero intro (only when JS is running) */
 .js .hero{opacity:0}
@@ -226,8 +226,8 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 .num p{font-size:16px;line-height:1.5;color:rgba(245,231,223,.74);max-width:240px;margin-top:6px}
 .num small{font-size:15px;font-weight:500;color:var(--mute)}
 .num.hot{position:relative;overflow:hidden;color:var(--off);
-  background:radial-gradient(70% 80% at 105% -5%,#A955CF 0%,rgba(176,91,200,0) 60%),radial-gradient(60% 70% at 70% 30%,rgba(240,102,150,.9),rgba(240,102,150,0) 70%),radial-gradient(60% 60% at 95% 110%,rgba(250,176,66,.95),rgba(246,150,50,0) 70%),#E8481C}
-.num.hot p,.num.hot small{color:rgba(255,255,255,.88)}
+  background:radial-gradient(70% 80% at 105% -5%,#A955CF 0%,rgba(176,91,200,0) 60%),radial-gradient(60% 70% at 70% 30%,rgba(240,102,150,.9),rgba(240,102,150,0) 70%),radial-gradient(55% 55% at 105% 115%,rgba(250,176,66,.35),rgba(246,150,50,0) 70%),#E8481C}
+.num.hot p,.num.hot small{color:#FFFFFF;font-weight:500}
 
 /* projects */
 .plist{margin-top:clamp(32px,3.6vw,52px);border-top:1px solid var(--line)}
@@ -330,7 +330,7 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 .cta>.blobs{position:absolute;z-index:0}
 .cta .say{font-family:var(--display);font-weight:700;font-size:clamp(42px,5.83vw,100px);line-height:.98;letter-spacing:-.045em}
 .cta .say .it{font-size:.881em;font-weight:300}
-.cta p{font-size:19px;line-height:1.55;color:rgba(255,255,255,.92)}
+.cta p{font-size:20px;font-weight:500;line-height:1.55;color:#FFFFFF}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .cta .pill{border-color:rgba(255,255,255,.75)}
 .cta .pill.fill{background:var(--off);color:var(--ink);border-color:var(--off)}
@@ -379,9 +379,8 @@ footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height
 @media (max-width:1099px){
   .bar{display:block}
   .nums{grid-template-columns:1fr 1fr}
-  .hero-foot{flex-direction:column;gap:2px;bottom:88px;padding:0 24px;text-align:center}
+  .hero-foot{flex-direction:row;flex-wrap:wrap;gap:8px 14px;bottom:30px;padding:0 20px;text-align:center}
   .hero-foot s{display:none}
-  .hero-br{left:0;right:0;text-align:center;bottom:30px}
   .prow{grid-template-columns:44px minmax(0,1fr) 220px}
   .thumb{width:220px}
 }
@@ -417,9 +416,8 @@ footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height
   .nav .hl{top:3px}
   .nav i,.nav a.x{display:none}
   .bolt{width:1.3em;margin-left:-.58em;top:calc(50% - .86em)}
-  .hero-foot{bottom:112px}
-  .hero-foot em{font-size:20px;line-height:1.25;max-width:270px}
-  .hero-br{bottom:52px;font-size:14px}
+  .hero-foot{bottom:36px;gap:4px 10px;padding:0 16px}
+  .hero-foot em{font-size:20px;line-height:1.25;max-width:280px}
   .nums{grid-template-columns:1fr;gap:12px}
   .num{min-height:190px;padding:24px 24px 26px}
   .num p{max-width:none}
@@ -594,7 +592,8 @@ html[data-theme="light"].stuck .theme-toggle:hover {
 .num.hot small,
 [data-theme="light"] .num.hot p,
 [data-theme="light"] .num.hot small {
-  color: rgba(255, 255, 255, 0.88) !important;
+  color: #FFFFFF !important;
+  font-weight: 500 !important;
 }
 
 /* 4. CTA gradient section at bottom */
@@ -609,7 +608,8 @@ html[data-theme="light"].stuck .theme-toggle:hover {
 
 .cta p,
 [data-theme="light"] .cta p {
-  color: rgba(255, 255, 255, 0.92) !important;
+  color: #FFFFFF !important;
+  font-weight: 500 !important;
 }
 
 /* Outline pills on CTA gradient: white border, white text */
@@ -907,8 +907,7 @@ html[data-theme="light"].stuck .theme-toggle:hover {
     </div>
 
     <div class="hero-bl" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <div class="hero-foot hi"><span>creative technologist</span><s></s><em>technical design, design systems, ai workflows</em></div>
-    <div class="hero-br hi">emerging technologies designer<br>tegna · denver, co</div>
+    <div class="hero-foot hi"><span class="role-lead">creative technologist</span><s></s><em>technical design, design systems, ai workflows</em><s></s><span class="role-sub">tegna · denver, co</span></div>
   </header>
 </div>
 
@@ -1376,7 +1375,7 @@ boltIn.addEventListener('animationend',function(e){ if(e.animationName==='zap') 
 /* ── fine-pointer extras: preview, cursor, magnetic, tilt, spotlight ── */
 var pv=null, cur=null, mags=[], tilts=[];
 if(FINE){
-  /* floating project preview */
+  /* floating project preview with kinetic motion reels */
   var plist=$('.plist'), rows=$$('.prow');
   if(plist&&rows.length){
     var el=d.createElement('div'); el.className='pv'; el.setAttribute('aria-hidden','true');
@@ -1385,13 +1384,52 @@ if(FINE){
     d.body.appendChild(el);
     pv={el:el,x:0,y:0,r:0,on:false,w:0,h:0};
     plist.classList.add('float');
+    var projectFrames = {
+      'tegna-elections-24': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp', '5.webp'],
+      'key-bridge-collapse': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
+      'to-the-point-wind-turbines': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
+      'manchester-road-race': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
+      'earthquake-risk': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp'],
+      'airbag-recall': ['cover.webp', '1.webp', '2.webp', '3.webp', '4.webp']
+    };
+    if(W.requestIdleCallback){
+      requestIdleCallback(function(){
+        Object.keys(projectFrames).forEach(function(s){
+          projectFrames[s].forEach(function(f){
+            var preload=new Image(); preload.src='/assets/work/'+s+'/'+f;
+          });
+        });
+      });
+    }
+    var animTimer=null, activeRow=-1, curFrame=0;
+    var stopAnim=function(){
+      if(animTimer){ clearInterval(animTimer); animTimer=null }
+      if(activeRow>=0 && rows[activeRow]){
+        var slug=rows[activeRow].getAttribute('href').replace(/^\/portfolio\/|\/$/g, '');
+        if(projectFrames[slug] && imgs[activeRow]) imgs[activeRow].src='/assets/work/'+slug+'/cover.webp';
+      }
+    };
     var enter=function(r,i){
+      stopAnim();
+      activeRow=i;
       rows.forEach(function(o){o.classList.toggle('h',o===r)}); plist.classList.add('hov');
       imgs.forEach(function(im,j){im.classList.toggle('cur',j===i)});
       if(!pv.on){ pv.w=el.offsetWidth; pv.h=el.offsetHeight; pv.x=ptr.cx+36; pv.y=ptr.cy-pv.h/2; pv.r=0 }
       pv.on=true; el.classList.add('on');
+      var REDUCED = W.matchMedia && W.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!REDUCED){
+        var slug=r.getAttribute('href').replace(/^\/portfolio\/|\/$/g, '');
+        var frames=projectFrames[slug];
+        if(frames&&frames.length>1){
+          curFrame=0;
+          animTimer=setInterval(function(){
+            curFrame=(curFrame+1)%frames.length;
+            if(imgs[i]) imgs[i].src='/assets/work/'+slug+'/'+frames[curFrame];
+          }, 420);
+        }
+      }
     };
-    var leave=function(){ rows.forEach(function(o){o.classList.remove('h')}); plist.classList.remove('hov'); pv.on=false; el.classList.remove('on') };
+    var leave=function(){ stopAnim(); activeRow=-1; rows.forEach(function(o){o.classList.remove('h')}); plist.classList.remove('hov'); pv.on=false; el.classList.remove('on') };
     rows.forEach(function(r,i){
       r.addEventListener('pointerenter',function(e){ if(e.pointerType!=='touch'){ptr.cx=e.clientX; ptr.cy=e.clientY; enter(r,i)} });
       r.addEventListener('focus',function(){ rows.forEach(function(o){o.classList.toggle('h',o===r)}); plist.classList.add('hov') });
