@@ -271,6 +271,13 @@ h2 .sub{font-size:.468em;white-space:nowrap;margin-left:.11em}
 .pv-bar{position:absolute;left:14px;right:14px;bottom:12px;height:2px;background:rgba(255,255,255,.2);border-radius:2px;overflow:hidden;pointer-events:none;z-index:2;opacity:0;transition:opacity .25s ease}
 .pv.on .pv-bar{opacity:1}
 .pv-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--amber),var(--orange));border-radius:2px;width:0%;transition:width .06s linear}
+.pv-hud{position:absolute;left:14px;right:14px;bottom:18px;display:flex;justify-content:space-between;align-items:center;font-family:'Space Grotesk',ui-monospace,monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.85);pointer-events:none;z-index:3;opacity:0;transition:opacity .25s ease}
+.pv.on .pv-hud{opacity:1}
+.pv-tc{display:inline-flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums;font-weight:600;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:2px 7px;border-radius:4px;border:1px solid rgba(255,255,255,.14)}
+.pv-rec{width:5px;height:5px;border-radius:50%;background:#ff3b30;box-shadow:0 0 6px rgba(255,59,48,.8);display:inline-block}
+.pv-time{font-style:normal;color:#fff}
+.pv-hint{font-size:9.5px;letter-spacing:.06em;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:2px 7px;border-radius:4px;border:1px solid rgba(255,255,255,.14);color:var(--amber);font-weight:600}
+.nav a.x{font-weight:600}
 .cur{position:fixed;left:0;top:0;z-index:100;width:36px;height:36px;margin:-18px 0 0 -18px;pointer-events:none;will-change:transform}
 .cur b{display:block;width:100%;height:100%;border-radius:50%;border:1.5px solid rgba(245,231,223,.75);box-shadow:0 0 0 1px rgba(31,29,29,.18);opacity:0;transform:scale(.4);transition:transform .45s var(--eo),opacity .3s ease,background-color .3s ease}
 .cur.on b{opacity:1;transform:none}
@@ -402,7 +409,6 @@ footer ul a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height
 @media (max-width:999px){
   :root{--name:clamp(64px,min(18vw,24vh),330px)}
   .navw{top:102px}
-  .nav i,.nav a.x{display:none}
   .kit{grid-template-columns:1fr}
   .xps{grid-template-columns:1fr 1fr}
   .cta{grid-template-columns:1fr;align-items:start}
@@ -865,7 +871,7 @@ html[data-theme="light"].stuck .theme-toggle:hover {
 <div class="navw">
   <nav class="nav" aria-label="Sections">
     <span class="hl" aria-hidden="true"></span>
-    <a class="on" href="#journey">journey</a><a href="#projects">projects</a><a href="#playground">playground</a><a href="#toolkit">toolkit</a><a href="#contact">contact</a><i></i><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
+    <a class="on" href="#journey">journey</a><a href="#projects">projects</a><a href="#playground">playground</a><a href="#toolkit">toolkit</a><a href="#contact">contact</a><i></i><a class="x" href="https://drive.google.com/file/d/1pe5GCmHrd4w9osHMgBbQyYB7ftix2-LO/view" target="_blank" rel="noopener" title="Open official resume in new tab">resume ↗</a><i></i><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
   </nav>
 </div>
 
@@ -1446,6 +1452,10 @@ if(FINE){
     var el=d.createElement('div'); el.className='pv'; el.setAttribute('aria-hidden','true');
     var inn=d.createElement('div'); inn.className='pv-in'; el.appendChild(inn);
     var imgs=rows.map(function(r){ var s=$('.thumb img',r), im=new Image(); im.alt=''; im.decoding='async'; im.src=s.currentSrc||s.src; inn.appendChild(im); return im });
+    var hudEl=d.createElement('div'); hudEl.className='pv-hud';
+    hudEl.innerHTML='<span class="pv-tc"><b class="pv-rec"></b>TC <em class="pv-time">00:00:01:00</em></span><span class="pv-hint">⇄ scrub timeline</span>';
+    inn.appendChild(hudEl);
+    var timeEl=hudEl.querySelector('.pv-time');
     var barEl=d.createElement('div'); barEl.className='pv-bar';
     var barFill=d.createElement('i'); barEl.appendChild(barFill);
     inn.appendChild(barEl);
@@ -1464,6 +1474,11 @@ if(FINE){
       imgs[idx].src='/assets/work/'+slug+'/'+frames[curFrame];
       var pct=((curFrame + 1) / frames.length) * 100;
       barFill.style.width=pct.toFixed(1)+'%';
+      if(timeEl){
+        var sec=curFrame+1;
+        var sub=Math.floor(((curFrame+1)/frames.length)*29);
+        timeEl.textContent='00:00:0'+sec+':'+(sub<10?'0':'')+sub;
+      }
     };
 
     var startAutoLoop=function(idx){
@@ -1514,6 +1529,12 @@ if(FINE){
         setFrame(i, targetFrame);
       } else {
         barFill.style.width = ((prog) * 100).toFixed(1) + '%';
+      }
+      if(timeEl){
+        var totalSec = frames.length;
+        var curSec = Math.floor(prog * totalSec) + 1;
+        var curSub = Math.floor((prog * totalSec * 29) % 29);
+        timeEl.textContent = '00:00:0' + curSec + ':' + (curSub < 10 ? '0' : '') + curSub;
       }
 
       resumeTimer = setTimeout(function(){

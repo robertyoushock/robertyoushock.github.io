@@ -22,7 +22,7 @@ The personal portfolio and design system of Robert Youshock, Emerging Technologi
 
 A portfolio built around the metaphor of a live television control room: deep cathode ink surfaces, warm sunset test-pattern gradients, and precision tactile interaction.
 
-- **Tactile timeline scrubbing.** Moving the cursor horizontally across any desktop project row directly scrubs through that broadcast animation's stills in real time, accompanied by a glowing 2px amber/orange progress bar (`.pv-bar`). Active scrubbing pauses auto-play; resting for 1.2s resumes smooth cycling from the playhead.
+- **Tactile timeline scrubbing.** Moving the cursor horizontally across any desktop project row directly scrubs through that broadcast animation's stills in real time, accompanied by a glowing 2px amber/orange progress bar (`.pv-bar`) and live SMPTE timecode HUD with scrub affordance (`.pv-hud`). Active scrubbing pauses auto-play; resting for 1.2s resumes smooth cycling from the playhead.
 - **Touch-aware kinetic reels.** Mobile visitors receive scroll-driven frame cycling via `IntersectionObserver`, bringing television motion to touch viewports without requiring mouse hover.
 - **Broadcast graphics at scale.** As a Motion Designer at TEGNA (2022 to 2025), Robert served as shift lead and final quality check for daily graphics deployed across 64 television stations, and led template design and animation for the nationwide 2024 Election package.
 - **Editorial narrative case studies.** Every project breaks down into a clear **Production Brief** (the constraints, timeline, and delivery requirements) and **On-Air Delivery** (the technical template architecture, Chyron Prime integration, and station toolkits).

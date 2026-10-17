@@ -188,6 +188,7 @@ The system uses an **Atmospheric & Luminous** depth model rather than structural
 ### Project Preview Reel (`.pv`)
 - **Shape:** 16:9 monitor container with `border-radius: 18px`, fixed position tracking the cursor (`will-change: transform`).
 - **Scrubber Bar (`.pv-bar`):** 2px frosted timeline track at bottom of `.pv-in` with dynamic gradient fill (`linear-gradient(90deg, var(--amber), var(--orange))`).
+- **Broadcast Timecode HUD (`.pv-hud`):** Live SMPTE timecode counter (`.pv-tc`, e.g. `TC 00:00:03:14`) with flashing recording beacon (`.pv-rec`) and amber interaction affordance pill (`.pv-hint: ⇄ scrub timeline`).
 - **Interaction:** Horizontal cursor movement across any project row (`.prow`) directly scrubs through animation frame stills. Pauses auto-cycle during active scrub; resumes automatically after 1.2s idle.
 
 ### Pipeline Cards (`.card`)
