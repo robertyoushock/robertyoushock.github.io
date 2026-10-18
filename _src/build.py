@@ -407,7 +407,6 @@ page_404_body = f"""
 <main id="main" class="proj" style="min-height:60vh">
   <p class="eyebrow" style="margin-top:60px">404</p>
   <h1>that page moved.</h1>
-  <p class="lede">The site was rebuilt in 2026. Everything's still here.</p>
   <p><a class="pill fill" href="/">go home</a></p>
 </main>
 {contact}"""
