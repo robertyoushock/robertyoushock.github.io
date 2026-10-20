@@ -281,6 +281,40 @@
         "media": "#E6ECEE",
         "pos": "left center"
       }
+    },
+    {
+      "slug": "fridgecig",
+      "title": "The Diet Coke Index",
+      "kicker": "Side project · Web app",
+      "blurb": "Real-time retail arbitrage for the 2:15 PM silver-can ritual. A high-contrast financial terminal cross-referencing live spot prices, bulk pack caffeine yields, McDonald's closed-loop 34°F fountains, and zero-friction Apple Maps routing.",
+      "demo": "https://www.robertyoushock.com/fridgecig/",
+      "demoLabel": "Open The Index",
+      "repo": "https://github.com/robertyoushock/fridgecig",
+      "repoLabel": "Code on GitHub",
+      "year": "2026",
+      "service": "Product design, front-end, audio synthesis",
+      "client": "Personal",
+      "built": "Next.js, TypeScript, Tailwind CSS, Web Audio API",
+      "problem": "The retail beverage market is wildly inefficient: bodegas charge $3.50 for a lukewarm 20oz bottle, while a fountain tap two blocks away is $1.09, and grocery store 24-packs run $0.37 a can. Finding the lowest unit-cost cold serve requires fragmented search and manual math.",
+      "solution": "The Diet Coke Index treats a 12oz aluminum can with the cold precision of a Bloomberg Terminal. One tap for coordinates yields two instantaneous answers: The Burn (immediate single-serve) and The Stash (bulk fridge alpha), complete with native Apple Maps routing on iOS, zero-latency Web Audio pull-tab synthesis, and McDonald's 34°F engineering schematics. Runs 100% on static GitHub Pages edge for $0/mo.",
+      "hero": "fridgecig",
+      "heroAlt": "The Diet Coke Index: financial terminal interface on desktop and mobile",
+      "heroW": 1600,
+      "heroH": 889,
+      "gallery": [
+        "fridgecig-burn",
+        "fridgecig-schematic",
+        "fridgecig-stash",
+        "fridgecig-architecture"
+      ],
+      "card": {
+        "bg": "#121316",
+        "fg": "#F2F3F5",
+        "accent": "#E31837",
+        "accentInk": "#FFFFFF",
+        "media": "#E31837",
+        "pos": "center center"
+      }
     }
   ]
 }

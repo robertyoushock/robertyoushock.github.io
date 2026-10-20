@@ -32,12 +32,6 @@
 <link rel="stylesheet" href="/assets/site.css?v=e8f2560c">
 <script>
 (function(){
-  var p = window.location.pathname;
-  if (/^\/cairn(\/.*)?$/i.test(p) && !p.startsWith('/cairn/')) {
-    var rest = p.replace(/^\/[Cc][Aa][Ii][Rr][Nn]\/?/, '');
-    window.location.replace('/cairn/' + (rest ? rest : '') + window.location.search + window.location.hash);
-    return;
-  }
   var pref = localStorage.getItem('theme-preference');
   var theme = pref || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
   document.documentElement.setAttribute('data-theme', theme);
